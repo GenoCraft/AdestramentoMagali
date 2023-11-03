@@ -10,13 +10,12 @@ namespace AdestramentoMagali.Teste
     {
         public partial class MyDbContext : DbContext
         {
-            public DbSet<Usuario> Usuario { get; set; }
+            public DbSet<Adestrador> Adestrador { get; set; }
             public DbSet<Cidade> Cidade { get; set; }
             public DbSet<Cliente> Cliente { get; set; }
-            public DbSet<Grupo> Grupo{ get; set; }
-            public DbSet<Produto> Produto { get; set; }
-            public DbSet<Venda> Venda { get; set; }
-            public DbSet<VendaItem> VendaItem { get; set; }
+            public DbSet<Equipamento> Equipamento { get; set; }
+            public DbSet<Cachorro> Cachorro { get; set; }
+            public DbSet<CachorroItem> CachorroItem { get; set; }
 
             public MyDbContext()
             {
@@ -45,43 +44,45 @@ namespace AdestramentoMagali.Teste
         }
         
         [TestMethod]
-        public void TestInsertUsuarios()
+        public void TestInsertAdestradores()
         {
             using (var context = new MyDbContext())
             {
 
-                var usuario = new Usuario
+                var adestrador = new Adestrador
                 {
                     Nome = "Murilo",
                     Email = "murilo@mail.com",
                     Senha = "123",
-                    DataCadastro = DateTime.Now,
-                    DataLogin = DateTime.Now
+                    Telefone = 18991062431,
+                    Especialidade = "Guarda",
+                    DataCadastro = DateTime.Now
                 };
-                context.Usuario.Add(usuario);
+                context.Adestrador.Add(adestrador);
                 
-                usuario = new Usuario
+                adestrador = new Adestrador
                 {
                     Nome = "João",
                     Email = "joao@mail.com",
                     Senha = "123",
-                    DataCadastro = DateTime.Now,
-                    DataLogin = DateTime.Now
+                    Telefone = 18991078901,
+                    Especialidade = "Agility",
+                    DataCadastro = DateTime.Now
                 };
-                context.Usuario.Add(usuario);
+                context.Adestrador.Add(adestrador);
 
                 context.SaveChanges();
             }
         }
 
         [TestMethod]
-        public void TestListarUsuarios()
+        public void TestListarAdestradores()
         {
             using (var context = new MyDbContext())
             {
-                foreach (var usuario in context.Usuario)
+                foreach (var adestrador in context.Adestrador)
                 {
-                    Console.WriteLine(JsonSerializer.Serialize(usuario));
+                    Console.WriteLine(JsonSerializer.Serialize(adestrador));
                 }
             }
         }

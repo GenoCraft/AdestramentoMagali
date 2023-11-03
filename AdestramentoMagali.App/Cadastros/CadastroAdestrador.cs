@@ -6,25 +6,29 @@ using AdestramentoMagali.Service.Validators;
 
 namespace AdestramentoMagali.App.Cadastros
 {
-    public partial class CadastroUsuario : CadastroBase
+    public partial class CadastroAdestrador : CadastroBase
     {
-        private readonly IBaseService<Usuario> _usuarioService;
+        private readonly IBaseService<Adestrador> _adestradorService;
 
-        private List<UsuarioModel>? usuarios;
+        private List<AdestradorModel>? adestradors;
 
-        public CadastroUsuario(IBaseService<Usuario> usuarioService)
+        public CadastroAdestrador(IBaseService<Adestrador> adestradorService)
         {
-            _usuarioService = usuarioService;
+            _adestradorService = adestradorService;
             InitializeComponent();
         }
 
-        private void PreencheObjeto(Usuario usuario)
+        private void PreencheObjeto(Adestrador adestrador)
         {
-            usuario.Nome = txtNome.Text;
-            usuario.Email = txtEmail.Text;
-            usuario.Login = txtLogin.Text;
-            usuario.Senha = txtSenha.Text;
-            usuario.Ativo = chkAtivo.Checked;
+            adestrador.Nome = txtNome.Text;
+            adestrador.Email = txtEmail.Text;
+            adestrador.Senha = txtSenha.Text;
+            if (long.TryParse(txtTelefone.Text, out var telefone))
+            {
+                adestrador.Telefone = telefone;
+            }
+            adestrador.Especialidade = cboEspecialidade.Text;
+            adestrador.Ativo = chkAtivo.Checked;
         }
 
         protected override void Salvar()
@@ -35,16 +39,16 @@ namespace AdestramentoMagali.App.Cadastros
                 {
                     if (int.TryParse(txtId.Text, out var id))
                     {
-                        var usuario = _usuarioService.GetById<Usuario>(id);
-                        PreencheObjeto(usuario);
-                        usuario = _usuarioService.Update<Usuario, Usuario, UsuarioValidator>(usuario);
+                        var adestrador = _adestradorService.GetById<Adestrador>(id);
+                        PreencheObjeto(adestrador);
+                        adestrador = _adestradorService.Update<Adestrador, Adestrador, AdestradorValidator>(adestrador);
                     }
                 }
                 else
                 {
-                    var usuario = new Usuario();
-                    PreencheObjeto(usuario);
-                    _usuarioService.Add<Usuario, Usuario, UsuarioValidator>(usuario);
+                    var adestrador = new Adestrador();
+                    PreencheObjeto(adestrador);
+                    _adestradorService.Add<Adestrador, Adestrador, AdestradorValidator>(adestrador);
 
                 }
 
@@ -60,7 +64,7 @@ namespace AdestramentoMagali.App.Cadastros
         {
             try
             {
-                _usuarioService.Delete(id);
+                _adestradorService.Delete(id);
             }
             catch (Exception ex)
             {
@@ -70,8 +74,8 @@ namespace AdestramentoMagali.App.Cadastros
 
         protected override void CarregaGrid()
         {
-            usuarios = _usuarioService.Get<UsuarioModel>().ToList();
-            dataGridViewConsulta.DataSource = usuarios;
+            adestradors = _adestradorService.Get<AdestradorModel>().ToList();
+            dataGridViewConsulta.DataSource = adestradors;
             dataGridViewConsulta.Columns["Senha"]!.Visible = false;
             dataGridViewConsulta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
@@ -81,16 +85,13 @@ namespace AdestramentoMagali.App.Cadastros
             txtId.Text = linha?.Cells["Id"].Value.ToString();
             txtNome.Text = linha?.Cells["Nome"].Value.ToString();
             txtEmail.Text = linha?.Cells["Email"].Value.ToString();
-            txtLogin.Text = linha?.Cells["Login"].Value.ToString();
+            txtTelefone.Text = linha?.Cells["Telefone"].Value.ToString();
+            cboEspecialidade.Text = linha?.Cells["Especialidade"].Value.ToString();
             txtSenha.Text = linha?.Cells["Senha"].Value.ToString();
             chkAtivo.Checked = (bool)(linha?.Cells["Ativo"].Value ?? false);
 
             txtDataCadastro.Text = DateTime.TryParse(linha?.Cells["DataCadastro"].Value.ToString(), out var dataC)
                 ? dataC.ToString("g")
-                : "";
-
-            txtDataLogin.Text = DateTime.TryParse(linha?.Cells["DataLogin"].Value.ToString(), out var dataL)
-                ? dataL.ToString("g")
                 : "";
         }
 

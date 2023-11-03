@@ -5,21 +5,21 @@ using AdestramentoMagali.Service.Validators;
 
 namespace AdestramentoMagali.App.Cadastros
 {
-    public partial class CadastroVenda : CadastroBase
+    public partial class CadastroCachorro : CadastroBase
     {
-        private readonly IBaseService<Venda> _vendaService;
+        private readonly IBaseService<Cachorro> _cachorroService;
 
-        private List<Venda>? vendas;
+        private List<Cachorro>? cachorros;
 
-        public CadastroVenda(IBaseService<Venda> vendaService)
+        public CadastroCachorro(IBaseService<Cachorro> cachorroService)
         {
-            _vendaService = vendaService;
+            _cachorroService = cachorroService;
             InitializeComponent();
         }
 
-        private void PreencheObjeto(Venda venda)
+        private void PreencheObjeto(Cachorro cachorro)
         {
-            //venda.Nome = txtNome.Text;
+            //cachorro.Nome = txtNome.Text;
         }
 
         protected override void Salvar()
@@ -30,16 +30,16 @@ namespace AdestramentoMagali.App.Cadastros
                 {
                     if (int.TryParse(txtId.Text, out var id))
                     {
-                        var venda = _vendaService.GetById<Venda>(id);
-                        PreencheObjeto(venda);
-                        venda = _vendaService.Update<Venda, Venda, VendaValidator>(venda);
+                        var cachorro = _cachorroService.GetById<Cachorro>(id);
+                        PreencheObjeto(cachorro);
+                        cachorro = _cachorroService.Update<Cachorro, Cachorro, CachorroValidator>(cachorro);
                     }
                 }
                 else
                 {
-                    var venda = new Venda();
-                    PreencheObjeto(venda);
-                    _vendaService.Add<Venda, Venda, VendaValidator>(venda);
+                    var cachorro = new Cachorro();
+                    PreencheObjeto(cachorro);
+                    _cachorroService.Add<Cachorro, Cachorro, CachorroValidator>(cachorro);
 
                 }
 
@@ -55,7 +55,7 @@ namespace AdestramentoMagali.App.Cadastros
         {
             try
             {
-                _vendaService.Delete(id);
+                _cachorroService.Delete(id);
             }
             catch (Exception ex)
             {
@@ -66,8 +66,8 @@ namespace AdestramentoMagali.App.Cadastros
 
         protected override void CarregaGrid()
         {
-            vendas = _vendaService.Get<Venda>().ToList();
-            dataGridViewConsulta.DataSource = vendas;
+            cachorros = _cachorroService.Get<Cachorro>().ToList();
+            dataGridViewConsulta.DataSource = cachorros;
             dataGridViewConsulta.Columns["Nome"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 

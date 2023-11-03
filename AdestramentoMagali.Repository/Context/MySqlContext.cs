@@ -13,25 +13,23 @@ namespace AdestramentoMagali.Repository.Context
             ChangeTracker.LazyLoadingEnabled = false;
         }
 
-        public DbSet<Usuario>? Usuario { get; set; }
+        public DbSet<Adestrador>? Adestrador { get; set; }
         public DbSet<Cidade>? Cidade { get; set; }
         public DbSet<Cliente>? Cliente { get; set; }
-        public DbSet<Grupo>? Grupo { get; set; }
-        public DbSet<Produto>? Produto { get; set; }
-        public DbSet<Venda>? Venda { get; set; }
-        public DbSet<VendaItem>? VendaItem { get; set; }
+        public DbSet<Equipamento>? Equipamento { get; set; }
+        public DbSet<Cachorro>? Cachorro { get; set; }
+        public DbSet<CachorroItem>? CachorroItem { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Usuario>(new UsuarioMap().Configure);            
+            modelBuilder.Entity<Adestrador>(new AdestradorMap().Configure);            
             modelBuilder.Entity<Cidade>(new CidadeMap().Configure);
             modelBuilder.Entity<Cliente>(new ClienteMap().Configure);
-            modelBuilder.Entity<Grupo>(new GrupoMap().Configure);
-            modelBuilder.Entity<Produto>(new ProdutoMap().Configure);
-            modelBuilder.Entity<Venda>(new VendaMap().Configure);
-            modelBuilder.Entity<VendaItem>(new VendaItemMap().Configure);
+            modelBuilder.Entity<Equipamento>(new EquipamentoMap().Configure);
+            modelBuilder.Entity<Cachorro>(new CachorroMap().Configure);
+            modelBuilder.Entity<CachorroItem>(new CachorroItemMap().Configure);
         }
     }
 }

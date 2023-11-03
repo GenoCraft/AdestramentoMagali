@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AdestramentoMagali.Repository.Mapping
 {
-    public class ProdutoMap : IEntityTypeConfiguration<Produto>
+    public class EquipamentoMap : IEntityTypeConfiguration<Equipamento>
     {
-        public void Configure(EntityTypeBuilder<Produto> builder)
+        public void Configure(EntityTypeBuilder<Equipamento> builder)
         {
-            builder.ToTable("Produto");
+            builder.ToTable("Equipamento");
 
             builder.HasKey(prop => prop.Id);
 
@@ -22,10 +22,8 @@ namespace AdestramentoMagali.Repository.Mapping
 
             builder.Property(prop => prop.DataCompra);
 
-            builder.Property(prop => prop.UnidadeVenda)
+            builder.Property(prop => prop.UnidadeCachorro)
                 .HasColumnType("varchar(10)");
-
-            builder.HasOne(prop => prop.Grupo);
         }
     }
 }

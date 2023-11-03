@@ -4,15 +4,15 @@ using AdestramentoMagali.Domain.Entities;
 
 namespace AdestramentoMagali.Service.Validators
 {
-    public class ProdutoValidator : AbstractValidator<Produto>
+    public class EquipamentoValidator : AbstractValidator<Equipamento>
     {
-        public ProdutoValidator()
+        public EquipamentoValidator()
         {
             RuleFor(c => c.Nome)
                 .NotEmpty().WithMessage("Por favor informe o nome.")
                 .NotNull().WithMessage("Por favor informe o nome.");
 
-            RuleFor(c => c.UnidadeVenda)
+            RuleFor(c => c.UnidadeCachorro)
                 .NotEmpty().WithMessage("Por favor informe a unidade.")
                 .NotNull().WithMessage("Por favor informe a unidade.");
         }

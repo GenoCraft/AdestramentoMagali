@@ -36,29 +36,29 @@ namespace AdestramentoMagali.Teste
                 });
             });
 
-            services.AddScoped<IBaseRepository<Usuario>, BaseRepository<Usuario>>();
-            services.AddScoped<IBaseService<Usuario>, BaseService<Usuario>>();
+            services.AddScoped<IBaseRepository<Adestrador>, BaseRepository<Adestrador>>();
+            services.AddScoped<IBaseService<Adestrador>, BaseService<Adestrador>>();
 
-            services.AddSingleton(new MapperConfiguration(config => { config.CreateMap<Usuario, Usuario>(); }).CreateMapper());
+            services.AddSingleton(new MapperConfiguration(config => { config.CreateMap<Adestrador, Adestrador>(); }).CreateMapper());
             return services.BuildServiceProvider();
         }
 
         [TestMethod]
-        public void TestUsuario()
+        public void TestAdestrador()
         { 
             var sp = ConfiguraServices();
-            var _userService = sp.GetService<IBaseService<Usuario>>();
-            var usuario = new Usuario
+            var _userService = sp.GetService<IBaseService<Adestrador>>();
+            var adestrador = new Adestrador
             {
                 Nome = "Murilo",
-                Login = "MuriloVarges",
                 Email = "murilo@mail.com",
                 Senha = "123",
+                Telefone = 18991062431,
+                Especialidade = "Guarda",
                 DataCadastro = DateTime.Now,
-                DataLogin = DateTime.Now
             };
 
-            var result = _userService?.Add<Usuario, Usuario, UsuarioValidator>(usuario);
+            var result = _userService?.Add<Adestrador, Adestrador, AdestradorValidator>(adestrador);
             Console.WriteLine(JsonSerializer.Serialize(result));
         }
     }

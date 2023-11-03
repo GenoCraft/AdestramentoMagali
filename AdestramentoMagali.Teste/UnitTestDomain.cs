@@ -42,60 +42,46 @@ namespace AdestramentoMagali.Teste
 
         }
         [TestMethod]
-        public void TesteGrupo ()
+        public void TesteEquipamento ()
         {
-            var grupo = new Grupo();
-            grupo.Nome = "Alimentos";
+            var equipamento = new Equipamento();
 
-            Console.WriteLine(JsonSerializer.Serialize(grupo));
-            Assert.AreEqual(grupo.Nome, "Alimentos");
+            equipamento.Nome = "Arroz";
+            equipamento.UnidadeCachorro = "BRI";
+            equipamento.Quantidade = 2;
+
+            Console.WriteLine(JsonSerializer.Serialize(equipamento));
+            Assert.AreEqual(equipamento.Nome, "Arroz");
+            Assert.AreEqual(equipamento.UnidadeCachorro, "BRI");
+            Assert.AreEqual(equipamento.Quantidade, 2);
 
         }
         [TestMethod]
-        public void TesteProduto ()
+        public void TesteAdestrador()
         {
-            var produto = new Produto();
-            var grupo = new Grupo();
+            var adestrador = new Adestrador();
+            adestrador.Email = "teste@gmail.com";
+            adestrador.Senha = "teste";
+            adestrador.Telefone = 12345678901;
+            adestrador.Especialidade = "Guarda";
+            adestrador.DataCadastro = DateTime.Today;
+            adestrador.Ativo = true;
 
-            grupo.Nome = "Alimentos";
-
-            produto.Nome = "Arroz";
-            produto.UnidadeVenda = "BRI";
-            produto.Quantidade = 2;
-            produto.Grupo = grupo;
-
-            Console.WriteLine(JsonSerializer.Serialize(produto));
-            Assert.AreEqual(produto.Nome, "Arroz");
-            Assert.AreEqual(produto.UnidadeVenda, "BRI");
-            Assert.AreEqual(produto.Quantidade, 2);
-            Assert.AreEqual(produto.Grupo, grupo);
-
-        }
-        [TestMethod]
-        public void TesteUsuario()
-        {
-            var usuario = new Usuario();
-            usuario.Email = "teste@gmail.com";
-            usuario.Senha = "teste";
-            usuario.Login = "teste";
-            usuario.DataCadastro = DateTime.Today;
-            usuario.Ativo = true;
-
-            Assert.AreEqual(usuario.Email, "teste@gmail.com");
-            Assert.AreEqual(usuario.Senha, "teste");
-            Assert.AreEqual(usuario.Login, "teste");
-            Assert.AreEqual(usuario.DataCadastro, DateTime.Today);
-            Assert.AreEqual(usuario.Ativo, true);
+            Assert.AreEqual(adestrador.Email, "teste@gmail.com");
+            Assert.AreEqual(adestrador.Senha, "teste");
+            Assert.AreEqual(adestrador.Telefone, 12345678901);
+            Assert.AreEqual(adestrador.Especialidade, "Guarda");
+            Assert.AreEqual(adestrador.DataCadastro, DateTime.Today);
+            Assert.AreEqual(adestrador.Ativo, true);
         }
 
         [TestMethod]
-        public void TesteVendas ()
+        public void TesteCachorros ()
         {
-            var venda = new Venda();
-            var vendaItem = new VendaItem();
+            var cachorro = new Cachorro();
+            var cachorroItem = new CachorroItem();
 
-            var produto = new Produto();
-            var grupo = new Grupo();
+            var equipamento = new Equipamento();
 
             var cidade = new Cidade();
             var cliente = new Cliente();
@@ -108,37 +94,34 @@ namespace AdestramentoMagali.Teste
             cliente.Bairro = "Centro";
             cliente.Endereco = "Rua Teste";
 
-            grupo.Nome = "Alimentos";
+            equipamento.Nome = "Arroz";
+            equipamento.UnidadeCachorro = "BRI";
+            equipamento.Quantidade = 2;
 
-            produto.Nome = "Arroz";
-            produto.UnidadeVenda = "BRI";
-            produto.Quantidade = 2;
-            produto.Grupo = grupo;
+            cachorro.Cliente = cliente;
+            cachorro.Data = DateTime.Today;
 
-            venda.Cliente = cliente;
-            venda.Data = DateTime.Today;
-
-            Console.WriteLine(JsonSerializer.Serialize(venda));
-            Assert.AreEqual(venda.Cliente, cliente);
-            Assert.AreEqual(venda.Data, DateTime.Today);
+            Console.WriteLine(JsonSerializer.Serialize(cachorro));
+            Assert.AreEqual(cachorro.Cliente, cliente);
+            Assert.AreEqual(cachorro.Data, DateTime.Today);
 
 
-            vendaItem.Quantidade = 2;
-            vendaItem.Produto = produto;
-            vendaItem.ValorUnitario = 5;
-            vendaItem.Venda = venda;
+            cachorroItem.Quantidade = 2;
+            cachorroItem.Equipamento = equipamento;
+            cachorroItem.ValorUnitario = 5;
+            cachorroItem.Cachorro = cachorro;
 
-            Console.WriteLine(JsonSerializer.Serialize(vendaItem));
-            Assert.AreEqual(vendaItem.Quantidade, 2);
-            Assert.AreEqual(vendaItem.Produto, produto);
-            Assert.AreEqual(vendaItem.ValorUnitario, 5);
-            Assert.AreEqual(vendaItem.Venda, venda);
+            Console.WriteLine(JsonSerializer.Serialize(cachorroItem));
+            Assert.AreEqual(cachorroItem.Quantidade, 2);
+            Assert.AreEqual(cachorroItem.Equipamento, equipamento);
+            Assert.AreEqual(cachorroItem.ValorUnitario, 5);
+            Assert.AreEqual(cachorroItem.Cachorro, cachorro);
 
-            venda.Items.Add(vendaItem);
+            cachorro.Items.Add(cachorroItem);
 
 
-            Console.WriteLine(JsonSerializer.Serialize(venda));
-            Assert.AreEqual(venda.Items[0].ValorUnitario, vendaItem.ValorUnitario);
+            Console.WriteLine(JsonSerializer.Serialize(cachorro));
+            Assert.AreEqual(cachorro.Items[0].ValorUnitario, cachorroItem.ValorUnitario);
 
         }
 

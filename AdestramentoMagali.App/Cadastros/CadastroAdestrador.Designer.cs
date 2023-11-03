@@ -1,6 +1,6 @@
 ﻿namespace AdestramentoMagali.App.Cadastros
 {
-    partial class CadastroUsuario
+    partial class CadastroAdestrador
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             txtSenha = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            txtLogin = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtNome = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            txtDataLogin = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtTelefone = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            cboEspecialidade = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtDataCadastro = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtEmail = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
@@ -51,15 +51,13 @@
             tabPageCadastro.Controls.Add(txtId);
             tabPageCadastro.Controls.Add(txtEmail);
             tabPageCadastro.Controls.Add(txtDataCadastro);
-            tabPageCadastro.Controls.Add(txtDataLogin);
             tabPageCadastro.Controls.Add(txtSenha);
-            tabPageCadastro.Controls.Add(txtLogin);
+            tabPageCadastro.Controls.Add(txtTelefone);
+            tabPageCadastro.Controls.Add(cboEspecialidade);
             tabPageCadastro.Controls.Add(txtNome);
             tabPageCadastro.Size = new Size(621, 297);
             tabPageCadastro.Controls.SetChildIndex(txtNome, 0);
-            tabPageCadastro.Controls.SetChildIndex(txtLogin, 0);
             tabPageCadastro.Controls.SetChildIndex(txtSenha, 0);
-            tabPageCadastro.Controls.SetChildIndex(txtDataLogin, 0);
             tabPageCadastro.Controls.SetChildIndex(txtDataCadastro, 0);
             tabPageCadastro.Controls.SetChildIndex(txtEmail, 0);
             tabPageCadastro.Controls.SetChildIndex(txtId, 0);
@@ -96,37 +94,6 @@
             txtSenha.TrailingIcon = null;
             txtSenha.UseSystemPasswordChar = false;
             // 
-            // txtLogin
-            // 
-            txtLogin.AnimateReadOnly = false;
-            txtLogin.AutoCompleteMode = AutoCompleteMode.None;
-            txtLogin.AutoCompleteSource = AutoCompleteSource.None;
-            txtLogin.BackgroundImageLayout = ImageLayout.None;
-            txtLogin.CharacterCasing = CharacterCasing.Normal;
-            txtLogin.Depth = 0;
-            txtLogin.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtLogin.HideSelection = true;
-            txtLogin.Hint = "Login";
-            txtLogin.LeadingIcon = null;
-            txtLogin.Location = new Point(14, 60);
-            txtLogin.MaxLength = 32767;
-            txtLogin.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtLogin.Name = "txtLogin";
-            txtLogin.PasswordChar = '\0';
-            txtLogin.PrefixSuffixText = null;
-            txtLogin.ReadOnly = false;
-            txtLogin.RightToLeft = RightToLeft.No;
-            txtLogin.SelectedText = "";
-            txtLogin.SelectionLength = 0;
-            txtLogin.SelectionStart = 0;
-            txtLogin.ShortcutsEnabled = true;
-            txtLogin.Size = new Size(380, 48);
-            txtLogin.TabIndex = 1;
-            txtLogin.TabStop = false;
-            txtLogin.TextAlign = HorizontalAlignment.Left;
-            txtLogin.TrailingIcon = null;
-            txtLogin.UseSystemPasswordChar = false;
-            // 
             // txtNome
             // 
             txtNome.AnimateReadOnly = false;
@@ -157,37 +124,6 @@
             txtNome.TextAlign = HorizontalAlignment.Left;
             txtNome.TrailingIcon = null;
             txtNome.UseSystemPasswordChar = false;
-            // 
-            // txtDataLogin
-            // 
-            txtDataLogin.AnimateReadOnly = false;
-            txtDataLogin.AutoCompleteMode = AutoCompleteMode.None;
-            txtDataLogin.AutoCompleteSource = AutoCompleteSource.None;
-            txtDataLogin.BackgroundImageLayout = ImageLayout.None;
-            txtDataLogin.CharacterCasing = CharacterCasing.Normal;
-            txtDataLogin.Depth = 0;
-            txtDataLogin.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtDataLogin.HideSelection = true;
-            txtDataLogin.Hint = "Data de Último Login";
-            txtDataLogin.LeadingIcon = null;
-            txtDataLogin.Location = new Point(325, 168);
-            txtDataLogin.MaxLength = 32767;
-            txtDataLogin.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtDataLogin.Name = "txtDataLogin";
-            txtDataLogin.PasswordChar = '\0';
-            txtDataLogin.PrefixSuffixText = null;
-            txtDataLogin.ReadOnly = true;
-            txtDataLogin.RightToLeft = RightToLeft.No;
-            txtDataLogin.SelectedText = "";
-            txtDataLogin.SelectionLength = 0;
-            txtDataLogin.SelectionStart = 0;
-            txtDataLogin.ShortcutsEnabled = true;
-            txtDataLogin.Size = new Size(268, 48);
-            txtDataLogin.TabIndex = 5;
-            txtDataLogin.TabStop = false;
-            txtDataLogin.TextAlign = HorizontalAlignment.Left;
-            txtDataLogin.TrailingIcon = null;
-            txtDataLogin.UseSystemPasswordChar = false;
             // 
             // txtDataCadastro
             // 
@@ -299,13 +235,13 @@
             chkAtivo.UseAccentColor = false;
             chkAtivo.UseVisualStyleBackColor = true;
             // 
-            // CadastroUsuarios
+            // CadastroAdestradors
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(635, 399);
             Location = new Point(0, 0);
-            Name = "CadastroUsuarios";
+            Name = "CadastroAdestradors";
             Text = "Cadastro de Usuários";
             materialTabControl.ResumeLayout(false);
             tabPageCadastro.ResumeLayout(false);
@@ -316,10 +252,10 @@
         #endregion
 
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtSenha;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtLogin;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtNome;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtDataLogin;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtEmail;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtTelefone;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit cboEspecialidade;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtDataCadastro;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtId;
         private ReaLTaiizor.Controls.MaterialCheckBox chkAtivo;

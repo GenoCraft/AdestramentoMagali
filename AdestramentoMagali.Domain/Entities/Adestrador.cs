@@ -2,30 +2,30 @@
 
 namespace AdestramentoMagali.Domain.Entities
 {
-    public class Usuario : BaseEntity<int>
+    public class Adestrador : BaseEntity<int>
     {
-        public Usuario()
+        public Adestrador()
         {
             
         }
 
-        public Usuario(int id, string? nome, string? senha, string? login, string? email, DateTime dataCadastro, DateTime dataLogin, bool ativo) : base(id)
+        public Adestrador(int id, string? nome, string? senha, string? email, long telefone, DateTime dataCadastro, string especialidade, bool ativo) : base(id)
         {
             Nome = nome;
             Senha = senha;
-            Login = login;
             Email = email;
+            Telefone = telefone;
             DataCadastro = dataCadastro;
-            DataLogin = dataLogin;
+            Especialidade = especialidade;
             Ativo = ativo;
         }
 
         public string? Nome { get; set; }
         public string? Senha { get; set; }
-        public string? Login { get; set; }
-        public string? Email { get; set; }   
+        public string? Email { get; set; }
+        public long? Telefone { get; set; }
         public DateTime DataCadastro { get; set; }
-        public DateTime DataLogin { get; set; }
+        public string? Especialidade { get; set; }
         public bool Ativo { get; set; }
 
     }

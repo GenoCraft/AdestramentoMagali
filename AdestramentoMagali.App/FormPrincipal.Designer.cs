@@ -33,13 +33,12 @@
             cadastrosToolStripMenuItem = new ToolStripMenuItem();
             usuáriosToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripSeparator();
-            grupoDeProdutosToolStripMenuItem = new ToolStripMenuItem();
-            produtosToolStripMenuItem = new ToolStripMenuItem();
+            equipamentosToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem2 = new ToolStripSeparator();
             cidadesToolStripMenuItem = new ToolStripMenuItem();
             clientesToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem3 = new ToolStripSeparator();
-            vendaToolStripMenuItem = new ToolStripMenuItem();
+            cachorroToolStripMenuItem = new ToolStripMenuItem();
             relatóriosToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -55,7 +54,7 @@
             // 
             // cadastrosToolStripMenuItem
             // 
-            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { usuáriosToolStripMenuItem, toolStripMenuItem1, grupoDeProdutosToolStripMenuItem, produtosToolStripMenuItem, toolStripMenuItem2, cidadesToolStripMenuItem, clientesToolStripMenuItem, toolStripMenuItem3, vendaToolStripMenuItem });
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { usuáriosToolStripMenuItem, toolStripMenuItem1, equipamentosToolStripMenuItem, toolStripMenuItem2, cidadesToolStripMenuItem, clientesToolStripMenuItem, toolStripMenuItem3, cachorroToolStripMenuItem });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             cadastrosToolStripMenuItem.Size = new Size(71, 20);
             cadastrosToolStripMenuItem.Text = "&Cadastros";
@@ -72,19 +71,12 @@
             toolStripMenuItem1.Name = "toolStripMenuItem1";
             toolStripMenuItem1.Size = new Size(177, 6);
             // 
-            // grupoDeProdutosToolStripMenuItem
+            // equipamentosToolStripMenuItem
             // 
-            grupoDeProdutosToolStripMenuItem.Name = "grupoDeProdutosToolStripMenuItem";
-            grupoDeProdutosToolStripMenuItem.Size = new Size(180, 22);
-            grupoDeProdutosToolStripMenuItem.Text = "&Grupo de Produtos";
-            grupoDeProdutosToolStripMenuItem.Click += grupoDeProdutosToolStripMenuItem_Click;
-            // 
-            // produtosToolStripMenuItem
-            // 
-            produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            produtosToolStripMenuItem.Size = new Size(180, 22);
-            produtosToolStripMenuItem.Text = "&Produtos";
-            produtosToolStripMenuItem.Click += produtosToolStripMenuItem_Click;
+            equipamentosToolStripMenuItem.Name = "equipamentosToolStripMenuItem";
+            equipamentosToolStripMenuItem.Size = new Size(180, 22);
+            equipamentosToolStripMenuItem.Text = "&Equipamentos";
+            equipamentosToolStripMenuItem.Click += equipamentosToolStripMenuItem_Click;
             // 
             // toolStripMenuItem2
             // 
@@ -110,11 +102,11 @@
             toolStripMenuItem3.Name = "toolStripMenuItem3";
             toolStripMenuItem3.Size = new Size(177, 6);
             // 
-            // vendaToolStripMenuItem
+            // cachorroToolStripMenuItem
             // 
-            vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
-            vendaToolStripMenuItem.Size = new Size(180, 22);
-            vendaToolStripMenuItem.Text = "&Vendas";
+            cachorroToolStripMenuItem.Name = "cachorroToolStripMenuItem";
+            cachorroToolStripMenuItem.Size = new Size(180, 22);
+            cachorroToolStripMenuItem.Text = "&Cachorros";
             // 
             // relatóriosToolStripMenuItem
             // 
@@ -148,12 +140,11 @@
         private ToolStripMenuItem cadastrosToolStripMenuItem;
         private ToolStripMenuItem usuáriosToolStripMenuItem;
         private ToolStripSeparator toolStripMenuItem1;
-        private ToolStripMenuItem grupoDeProdutosToolStripMenuItem;
-        private ToolStripMenuItem produtosToolStripMenuItem;
+        private ToolStripMenuItem equipamentosToolStripMenuItem;
         private ToolStripSeparator toolStripMenuItem2;
         private ToolStripMenuItem cidadesToolStripMenuItem;
         private ToolStripMenuItem clientesToolStripMenuItem;
-        private ToolStripMenuItem vendaToolStripMenuItem;
+        private ToolStripMenuItem cachorroToolStripMenuItem;
         private ToolStripSeparator toolStripMenuItem3;
         private ToolStripMenuItem relatóriosToolStripMenuItem;
     }

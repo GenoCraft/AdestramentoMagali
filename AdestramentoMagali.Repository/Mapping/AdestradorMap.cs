@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AdestramentoMagali.Repository.Mapping
 {
-    public class UsuarioMap : IEntityTypeConfiguration<Usuario>
+    public class AdestradorMap : IEntityTypeConfiguration<Adestrador>
     {
-        public void Configure(EntityTypeBuilder<Usuario> builder)
+        public void Configure(EntityTypeBuilder<Adestrador> builder)
         {
-            builder.ToTable("Usuario");
+            builder.ToTable("Adestrador");
 
             builder.HasKey(prop => prop.Id);
 
@@ -22,9 +22,9 @@ namespace AdestramentoMagali.Repository.Mapping
                 .IsRequired()
                 .HasColumnType("varchar(100)");
             
-            builder.Property(prop => prop.Login)
+            builder.Property(prop => prop.Telefone)
                 .IsRequired()
-                .HasColumnType("varchar(100)");
+                .HasColumnType("mediumtext");
 
             builder.Property(prop => prop.Email)
                 .IsRequired()
@@ -33,8 +33,9 @@ namespace AdestramentoMagali.Repository.Mapping
             builder.Property(prop => prop.DataCadastro)
                 .HasDefaultValue(DateTime.Now);
 
-            builder.Property(prop => prop.DataLogin)
-                .IsRequired();
+            builder.Property(prop => prop.Especialidade)
+                .IsRequired()
+                .HasColumnType("varchar(100)");
 
             builder.Property(prop => prop.Ativo);
         }

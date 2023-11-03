@@ -23,17 +23,12 @@ namespace AdestramentoMagali.App
 
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Exibeformulario<CadastroUsuario>();
+            Exibeformulario<CadastroAdestrador>();
         }
 
-        private void grupoDeProdutosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void equipamentosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Exibeformulario<CadastroGrupo>();
-        }
-
-        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Exibeformulario<CadastroProduto>();
+            Exibeformulario<CadastroEquipamento>();
         }
 
         private void cidadesToolStripMenuItem_Click(object sender, EventArgs e)

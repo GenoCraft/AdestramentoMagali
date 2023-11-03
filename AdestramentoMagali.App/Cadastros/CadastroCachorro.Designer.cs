@@ -1,6 +1,6 @@
 ﻿namespace AdestramentoMagali.App.Cadastros
 {
-    partial class CadastroVenda
+    partial class CadastroCachorro
     {
         /// <summary>
         /// Required designer variable.
@@ -32,10 +32,10 @@
             groupBox1 = new GroupBox();
             dataGridView1 = new DataGridView();
             cboCliente = new ReaLTaiizor.Controls.MaterialComboBox();
-            cboUsuario = new ReaLTaiizor.Controls.MaterialComboBox();
-            txtValorTotalVenda = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            txtDataVenda = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
-            cboProduto = new ReaLTaiizor.Controls.MaterialComboBox();
+            cboAdestrador = new ReaLTaiizor.Controls.MaterialComboBox();
+            txtValorTotalCachorro = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtDataCachorro = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
+            cboEquipamento = new ReaLTaiizor.Controls.MaterialComboBox();
             txtVlUnitario = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtQuantidade = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtVlTotal = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
@@ -52,9 +52,9 @@
             // 
             // tabPageCadastro
             // 
-            tabPageCadastro.Controls.Add(txtDataVenda);
-            tabPageCadastro.Controls.Add(txtValorTotalVenda);
-            tabPageCadastro.Controls.Add(cboUsuario);
+            tabPageCadastro.Controls.Add(txtDataCachorro);
+            tabPageCadastro.Controls.Add(txtValorTotalCachorro);
+            tabPageCadastro.Controls.Add(cboAdestrador);
             tabPageCadastro.Controls.Add(cboCliente);
             tabPageCadastro.Controls.Add(groupBox1);
             tabPageCadastro.Controls.Add(txtId);
@@ -62,9 +62,9 @@
             tabPageCadastro.Controls.SetChildIndex(txtId, 0);
             tabPageCadastro.Controls.SetChildIndex(groupBox1, 0);
             tabPageCadastro.Controls.SetChildIndex(cboCliente, 0);
-            tabPageCadastro.Controls.SetChildIndex(cboUsuario, 0);
-            tabPageCadastro.Controls.SetChildIndex(txtValorTotalVenda, 0);
-            tabPageCadastro.Controls.SetChildIndex(txtDataVenda, 0);
+            tabPageCadastro.Controls.SetChildIndex(cboAdestrador, 0);
+            tabPageCadastro.Controls.SetChildIndex(txtValorTotalCachorro, 0);
+            tabPageCadastro.Controls.SetChildIndex(txtDataCachorro, 0);
             // 
             // txtId
             // 
@@ -102,14 +102,14 @@
             groupBox1.Controls.Add(txtVlTotal);
             groupBox1.Controls.Add(txtQuantidade);
             groupBox1.Controls.Add(txtVlUnitario);
-            groupBox1.Controls.Add(cboProduto);
+            groupBox1.Controls.Add(cboEquipamento);
             groupBox1.Controls.Add(dataGridView1);
             groupBox1.Location = new Point(6, 131);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(608, 238);
             groupBox1.TabIndex = 13;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Produtos da Venda";
+            groupBox1.Text = "Equipamentos da Cachorro";
             // 
             // dataGridView1
             // 
@@ -143,125 +143,125 @@
             cboCliente.StartIndex = 0;
             cboCliente.TabIndex = 14;
             // 
-            // cboUsuario
+            // cboAdestrador
             // 
-            cboUsuario.AutoResize = false;
-            cboUsuario.BackColor = Color.FromArgb(255, 255, 255);
-            cboUsuario.Depth = 0;
-            cboUsuario.DrawMode = DrawMode.OwnerDrawVariable;
-            cboUsuario.DropDownHeight = 174;
-            cboUsuario.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboUsuario.DropDownWidth = 121;
-            cboUsuario.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            cboUsuario.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            cboUsuario.FormattingEnabled = true;
-            cboUsuario.Hint = "Usuário/Vendedor";
-            cboUsuario.IntegralHeight = false;
-            cboUsuario.ItemHeight = 43;
-            cboUsuario.Location = new Point(222, 6);
-            cboUsuario.MaxDropDownItems = 4;
-            cboUsuario.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            cboUsuario.Name = "cboUsuario";
-            cboUsuario.Size = new Size(276, 49);
-            cboUsuario.StartIndex = 0;
-            cboUsuario.TabIndex = 15;
+            cboAdestrador.AutoResize = false;
+            cboAdestrador.BackColor = Color.FromArgb(255, 255, 255);
+            cboAdestrador.Depth = 0;
+            cboAdestrador.DrawMode = DrawMode.OwnerDrawVariable;
+            cboAdestrador.DropDownHeight = 174;
+            cboAdestrador.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboAdestrador.DropDownWidth = 121;
+            cboAdestrador.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cboAdestrador.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboAdestrador.FormattingEnabled = true;
+            cboAdestrador.Hint = "Usuário/Vendedor";
+            cboAdestrador.IntegralHeight = false;
+            cboAdestrador.ItemHeight = 43;
+            cboAdestrador.Location = new Point(222, 6);
+            cboAdestrador.MaxDropDownItems = 4;
+            cboAdestrador.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            cboAdestrador.Name = "cboAdestrador";
+            cboAdestrador.Size = new Size(276, 49);
+            cboAdestrador.StartIndex = 0;
+            cboAdestrador.TabIndex = 15;
             // 
-            // txtValorTotalVenda
+            // txtValorTotalCachorro
             // 
-            txtValorTotalVenda.AnimateReadOnly = false;
-            txtValorTotalVenda.AutoCompleteMode = AutoCompleteMode.None;
-            txtValorTotalVenda.AutoCompleteSource = AutoCompleteSource.None;
-            txtValorTotalVenda.BackgroundImageLayout = ImageLayout.None;
-            txtValorTotalVenda.CharacterCasing = CharacterCasing.Normal;
-            txtValorTotalVenda.Depth = 0;
-            txtValorTotalVenda.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtValorTotalVenda.HideSelection = true;
-            txtValorTotalVenda.Hint = "Valor Total";
-            txtValorTotalVenda.LeadingIcon = null;
-            txtValorTotalVenda.Location = new Point(504, 62);
-            txtValorTotalVenda.MaxLength = 32767;
-            txtValorTotalVenda.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtValorTotalVenda.Name = "txtValorTotalVenda";
-            txtValorTotalVenda.PasswordChar = '\0';
-            txtValorTotalVenda.PrefixSuffixText = null;
-            txtValorTotalVenda.ReadOnly = true;
-            txtValorTotalVenda.RightToLeft = RightToLeft.No;
-            txtValorTotalVenda.SelectedText = "";
-            txtValorTotalVenda.SelectionLength = 0;
-            txtValorTotalVenda.SelectionStart = 0;
-            txtValorTotalVenda.ShortcutsEnabled = true;
-            txtValorTotalVenda.Size = new Size(107, 48);
-            txtValorTotalVenda.TabIndex = 16;
-            txtValorTotalVenda.TabStop = false;
-            txtValorTotalVenda.TextAlign = HorizontalAlignment.Left;
-            txtValorTotalVenda.TrailingIcon = null;
-            txtValorTotalVenda.UseSystemPasswordChar = false;
+            txtValorTotalCachorro.AnimateReadOnly = false;
+            txtValorTotalCachorro.AutoCompleteMode = AutoCompleteMode.None;
+            txtValorTotalCachorro.AutoCompleteSource = AutoCompleteSource.None;
+            txtValorTotalCachorro.BackgroundImageLayout = ImageLayout.None;
+            txtValorTotalCachorro.CharacterCasing = CharacterCasing.Normal;
+            txtValorTotalCachorro.Depth = 0;
+            txtValorTotalCachorro.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtValorTotalCachorro.HideSelection = true;
+            txtValorTotalCachorro.Hint = "Valor Total";
+            txtValorTotalCachorro.LeadingIcon = null;
+            txtValorTotalCachorro.Location = new Point(504, 62);
+            txtValorTotalCachorro.MaxLength = 32767;
+            txtValorTotalCachorro.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtValorTotalCachorro.Name = "txtValorTotalCachorro";
+            txtValorTotalCachorro.PasswordChar = '\0';
+            txtValorTotalCachorro.PrefixSuffixText = null;
+            txtValorTotalCachorro.ReadOnly = true;
+            txtValorTotalCachorro.RightToLeft = RightToLeft.No;
+            txtValorTotalCachorro.SelectedText = "";
+            txtValorTotalCachorro.SelectionLength = 0;
+            txtValorTotalCachorro.SelectionStart = 0;
+            txtValorTotalCachorro.ShortcutsEnabled = true;
+            txtValorTotalCachorro.Size = new Size(107, 48);
+            txtValorTotalCachorro.TabIndex = 16;
+            txtValorTotalCachorro.TabStop = false;
+            txtValorTotalCachorro.TextAlign = HorizontalAlignment.Left;
+            txtValorTotalCachorro.TrailingIcon = null;
+            txtValorTotalCachorro.UseSystemPasswordChar = false;
             // 
-            // txtDataVenda
+            // txtDataCachorro
             // 
-            txtDataVenda.AllowPromptAsInput = true;
-            txtDataVenda.AnimateReadOnly = false;
-            txtDataVenda.AsciiOnly = false;
-            txtDataVenda.BackgroundImageLayout = ImageLayout.None;
-            txtDataVenda.BeepOnError = false;
-            txtDataVenda.CutCopyMaskFormat = MaskFormat.IncludeLiterals;
-            txtDataVenda.Depth = 0;
-            txtDataVenda.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtDataVenda.HidePromptOnLeave = false;
-            txtDataVenda.HideSelection = true;
-            txtDataVenda.Hint = "Data Venda";
-            txtDataVenda.InsertKeyMode = InsertKeyMode.Default;
-            txtDataVenda.LeadingIcon = null;
-            txtDataVenda.Location = new Point(9, 7);
-            txtDataVenda.Mask = "99/99/9999";
-            txtDataVenda.MaxLength = 32767;
-            txtDataVenda.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtDataVenda.Name = "txtDataVenda";
-            txtDataVenda.PasswordChar = '\0';
-            txtDataVenda.PrefixSuffixText = null;
-            txtDataVenda.PromptChar = '_';
-            txtDataVenda.ReadOnly = false;
-            txtDataVenda.RejectInputOnFirstFailure = false;
-            txtDataVenda.ResetOnPrompt = true;
-            txtDataVenda.ResetOnSpace = true;
-            txtDataVenda.RightToLeft = RightToLeft.No;
-            txtDataVenda.SelectedText = "";
-            txtDataVenda.SelectionLength = 0;
-            txtDataVenda.SelectionStart = 0;
-            txtDataVenda.ShortcutsEnabled = true;
-            txtDataVenda.Size = new Size(177, 48);
-            txtDataVenda.SkipLiterals = true;
-            txtDataVenda.TabIndex = 17;
-            txtDataVenda.TabStop = false;
-            txtDataVenda.Text = "  /  /";
-            txtDataVenda.TextAlign = HorizontalAlignment.Center;
-            txtDataVenda.TextMaskFormat = MaskFormat.IncludeLiterals;
-            txtDataVenda.TrailingIcon = null;
-            txtDataVenda.UseSystemPasswordChar = false;
-            txtDataVenda.ValidatingType = null;
+            txtDataCachorro.AllowPromptAsInput = true;
+            txtDataCachorro.AnimateReadOnly = false;
+            txtDataCachorro.AsciiOnly = false;
+            txtDataCachorro.BackgroundImageLayout = ImageLayout.None;
+            txtDataCachorro.BeepOnError = false;
+            txtDataCachorro.CutCopyMaskFormat = MaskFormat.IncludeLiterals;
+            txtDataCachorro.Depth = 0;
+            txtDataCachorro.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtDataCachorro.HidePromptOnLeave = false;
+            txtDataCachorro.HideSelection = true;
+            txtDataCachorro.Hint = "Data Cachorro";
+            txtDataCachorro.InsertKeyMode = InsertKeyMode.Default;
+            txtDataCachorro.LeadingIcon = null;
+            txtDataCachorro.Location = new Point(9, 7);
+            txtDataCachorro.Mask = "99/99/9999";
+            txtDataCachorro.MaxLength = 32767;
+            txtDataCachorro.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtDataCachorro.Name = "txtDataCachorro";
+            txtDataCachorro.PasswordChar = '\0';
+            txtDataCachorro.PrefixSuffixText = null;
+            txtDataCachorro.PromptChar = '_';
+            txtDataCachorro.ReadOnly = false;
+            txtDataCachorro.RejectInputOnFirstFailure = false;
+            txtDataCachorro.ResetOnPrompt = true;
+            txtDataCachorro.ResetOnSpace = true;
+            txtDataCachorro.RightToLeft = RightToLeft.No;
+            txtDataCachorro.SelectedText = "";
+            txtDataCachorro.SelectionLength = 0;
+            txtDataCachorro.SelectionStart = 0;
+            txtDataCachorro.ShortcutsEnabled = true;
+            txtDataCachorro.Size = new Size(177, 48);
+            txtDataCachorro.SkipLiterals = true;
+            txtDataCachorro.TabIndex = 17;
+            txtDataCachorro.TabStop = false;
+            txtDataCachorro.Text = "  /  /";
+            txtDataCachorro.TextAlign = HorizontalAlignment.Center;
+            txtDataCachorro.TextMaskFormat = MaskFormat.IncludeLiterals;
+            txtDataCachorro.TrailingIcon = null;
+            txtDataCachorro.UseSystemPasswordChar = false;
+            txtDataCachorro.ValidatingType = null;
             // 
-            // cboProduto
+            // cboEquipamento
             // 
-            cboProduto.AutoResize = false;
-            cboProduto.BackColor = Color.FromArgb(255, 255, 255);
-            cboProduto.Depth = 0;
-            cboProduto.DrawMode = DrawMode.OwnerDrawVariable;
-            cboProduto.DropDownHeight = 174;
-            cboProduto.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboProduto.DropDownWidth = 121;
-            cboProduto.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            cboProduto.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            cboProduto.FormattingEnabled = true;
-            cboProduto.Hint = "Produto";
-            cboProduto.IntegralHeight = false;
-            cboProduto.ItemHeight = 43;
-            cboProduto.Location = new Point(3, 22);
-            cboProduto.MaxDropDownItems = 4;
-            cboProduto.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            cboProduto.Name = "cboProduto";
-            cboProduto.Size = new Size(215, 49);
-            cboProduto.StartIndex = 0;
-            cboProduto.TabIndex = 15;
+            cboEquipamento.AutoResize = false;
+            cboEquipamento.BackColor = Color.FromArgb(255, 255, 255);
+            cboEquipamento.Depth = 0;
+            cboEquipamento.DrawMode = DrawMode.OwnerDrawVariable;
+            cboEquipamento.DropDownHeight = 174;
+            cboEquipamento.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboEquipamento.DropDownWidth = 121;
+            cboEquipamento.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cboEquipamento.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboEquipamento.FormattingEnabled = true;
+            cboEquipamento.Hint = "Equipamento";
+            cboEquipamento.IntegralHeight = false;
+            cboEquipamento.ItemHeight = 43;
+            cboEquipamento.Location = new Point(3, 22);
+            cboEquipamento.MaxDropDownItems = 4;
+            cboEquipamento.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            cboEquipamento.Name = "cboEquipamento";
+            cboEquipamento.Size = new Size(215, 49);
+            cboEquipamento.StartIndex = 0;
+            cboEquipamento.TabIndex = 15;
             // 
             // txtVlUnitario
             // 
@@ -357,14 +357,14 @@
             txtVlTotal.TrailingIcon = null;
             txtVlTotal.UseSystemPasswordChar = false;
             // 
-            // CadastroVenda
+            // CadastroCachorro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(635, 553);
             Location = new Point(0, 0);
-            Name = "CadastroVenda";
-            Text = "Cadastro de Vendas";
+            Name = "CadastroCachorro";
+            Text = "Cadastro de Cachorros";
             materialTabControl.ResumeLayout(false);
             tabPageCadastro.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
@@ -376,12 +376,12 @@
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtId;
         private GroupBox groupBox1;
         private DataGridView dataGridView1;
-        private ReaLTaiizor.Controls.MaterialComboBox cboUsuario;
+        private ReaLTaiizor.Controls.MaterialComboBox cboAdestrador;
         private ReaLTaiizor.Controls.MaterialComboBox cboCliente;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtValorTotalVenda;
-        private ReaLTaiizor.Controls.MaterialMaskedTextBox txtDataVenda;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtValorTotalCachorro;
+        private ReaLTaiizor.Controls.MaterialMaskedTextBox txtDataCachorro;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtVlUnitario;
-        private ReaLTaiizor.Controls.MaterialComboBox cboProduto;
+        private ReaLTaiizor.Controls.MaterialComboBox cboEquipamento;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtVlTotal;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtQuantidade;
     }
