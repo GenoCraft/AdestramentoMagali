@@ -46,13 +46,13 @@ namespace AdestramentoMagali.Teste
         {
             var equipamento = new Equipamento();
 
-            equipamento.Nome = "Arroz";
-            equipamento.UnidadeCachorro = "BRI";
+            equipamento.Nome = "Focinheira";
+            equipamento.Indicacao = "Guarda";
             equipamento.Quantidade = 2;
 
             Console.WriteLine(JsonSerializer.Serialize(equipamento));
-            Assert.AreEqual(equipamento.Nome, "Arroz");
-            Assert.AreEqual(equipamento.UnidadeCachorro, "BRI");
+            Assert.AreEqual(equipamento.Nome, "Focinheira");
+            Assert.AreEqual(equipamento.Indicacao, "Guarda");
             Assert.AreEqual(equipamento.Quantidade, 2);
 
         }
@@ -94,8 +94,8 @@ namespace AdestramentoMagali.Teste
             cliente.Bairro = "Centro";
             cliente.Endereco = "Rua Teste";
 
-            equipamento.Nome = "Arroz";
-            equipamento.UnidadeCachorro = "BRI";
+            equipamento.Nome = "Focinheira";
+            equipamento.Indicacao = "Guarda";
             equipamento.Quantidade = 2;
 
             cachorro.Cliente = cliente;

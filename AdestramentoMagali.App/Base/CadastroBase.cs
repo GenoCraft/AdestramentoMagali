@@ -20,7 +20,7 @@ namespace AdestramentoMagali.App.Base
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(@"Deseja realmente cancelar?", @"IFSP Store", MessageBoxButtons.YesNo,
+            if (MessageBox.Show(@"Deseja realmente cancelar?", @"Adestramento Magali", MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question)
                 == DialogResult.Yes)
             {
@@ -50,7 +50,7 @@ namespace AdestramentoMagali.App.Base
         {
             if (dataGridViewConsulta.SelectedRows.Count > 0)
             {
-                if (MessageBox.Show(@"Deseja realmente deletar?", @"IFSP Store", MessageBoxButtons.YesNo,
+                if (MessageBox.Show(@"Deseja realmente deletar?", @"Adestramento Magali", MessageBoxButtons.YesNo,
                         MessageBoxIcon.Question)
                     == DialogResult.Yes)
                 {
@@ -61,7 +61,7 @@ namespace AdestramentoMagali.App.Base
             }
             else
             {
-                MessageBox.Show(@"Selecione algum registro!", @"IFSP Store", MessageBoxButtons.OK,
+                MessageBox.Show(@"Selecione algum registro!", @"Adestramento Magali", MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
         }
@@ -118,7 +118,7 @@ namespace AdestramentoMagali.App.Base
             }
             else
             {
-                MessageBox.Show(@"Selecione algum registro!", @"IFSP Store", MessageBoxButtons.OK,
+                MessageBox.Show(@"Selecione algum registro!", @"Adestramento Magali", MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
         }

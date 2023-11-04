@@ -21,16 +21,8 @@ namespace AdestramentoMagali.App.Cadastros
         private void PreencheObjeto(Equipamento equipamento)
         {
             equipamento.Nome = txtNome.Text;
-            if (float.TryParse(txtPreco.Text, out var preco))
-            {
-                equipamento.Preco = preco;
-            }
-
-            if (DateTime.TryParse(txtDataCompra.Text, out var dataCompra))
-            {
-                equipamento.DataCompra = dataCompra;
-            }
-            equipamento.UnidadeCachorro = txtUnidadeCachorro.Text;
+            equipamento.Indicacao = txtIndicacao.Text;
+            equipamento.Descricao = txtDescricao.Text;
         }
 
         protected override void Salvar()
@@ -58,7 +50,7 @@ namespace AdestramentoMagali.App.Cadastros
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"Adestramento Magali", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -70,7 +62,7 @@ namespace AdestramentoMagali.App.Cadastros
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"Adestramento Magali", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -78,12 +70,8 @@ namespace AdestramentoMagali.App.Cadastros
         {
             txtId.Text = linha?.Cells["Id"].Value.ToString();
             txtNome.Text = linha?.Cells["Nome"].Value.ToString();
-            txtUnidadeCachorro.Text = linha?.Cells["UnidadeCachorro"].Value.ToString();
-            txtPreco.Text = linha?.Cells["Preco"].Value.ToString();
-            txtDataCompra.Text = DateTime.TryParse(linha?.Cells["DataCompra"].Value.ToString(), out var dataC)
-               ? dataC.ToString("g")
-               : "";
-
+            txtIndicacao.Text = linha?.Cells["Indicacao"].Value.ToString();
+            txtDescricao.Text = linha?.Cells["Descricao"].Value.ToString();
         }
 
     }

@@ -242,7 +242,7 @@
             ClientSize = new Size(635, 399);
             Location = new Point(0, 0);
             Name = "CadastroAdestradors";
-            Text = "Cadastro de Usuários";
+            Text = "Cadastro de Adestradores";
             materialTabControl.ResumeLayout(false);
             tabPageCadastro.ResumeLayout(false);
             tabPageCadastro.PerformLayout();

@@ -31,14 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             menuStrip1 = new MenuStrip();
             cadastrosToolStripMenuItem = new ToolStripMenuItem();
-            usuáriosToolStripMenuItem = new ToolStripMenuItem();
+            adestradoresToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripSeparator();
             equipamentosToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem2 = new ToolStripSeparator();
             cidadesToolStripMenuItem = new ToolStripMenuItem();
             clientesToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem3 = new ToolStripSeparator();
-            cachorroToolStripMenuItem = new ToolStripMenuItem();
+            cachorrosToolStripMenuItem = new ToolStripMenuItem();
             relatóriosToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -54,17 +54,17 @@
             // 
             // cadastrosToolStripMenuItem
             // 
-            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { usuáriosToolStripMenuItem, toolStripMenuItem1, equipamentosToolStripMenuItem, toolStripMenuItem2, cidadesToolStripMenuItem, clientesToolStripMenuItem, toolStripMenuItem3, cachorroToolStripMenuItem });
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { adestradoresToolStripMenuItem, toolStripMenuItem1, equipamentosToolStripMenuItem, toolStripMenuItem2, cidadesToolStripMenuItem, clientesToolStripMenuItem, toolStripMenuItem3, cachorrosToolStripMenuItem });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             cadastrosToolStripMenuItem.Size = new Size(71, 20);
             cadastrosToolStripMenuItem.Text = "&Cadastros";
             // 
-            // usuáriosToolStripMenuItem
+            // adestradoresToolStripMenuItem
             // 
-            usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            usuáriosToolStripMenuItem.Size = new Size(180, 22);
-            usuáriosToolStripMenuItem.Text = "&Usuários";
-            usuáriosToolStripMenuItem.Click += usu疵iosToolStripMenuItem_Click;
+            adestradoresToolStripMenuItem.Name = "adestradoresToolStripMenuItem";
+            adestradoresToolStripMenuItem.Size = new Size(180, 22);
+            adestradoresToolStripMenuItem.Text = "&Adestradores";
+            adestradoresToolStripMenuItem.Click += adestradoresToolStripMenuItem_Click;
             // 
             // toolStripMenuItem1
             // 
@@ -87,7 +87,7 @@
             // 
             cidadesToolStripMenuItem.Name = "cidadesToolStripMenuItem";
             cidadesToolStripMenuItem.Size = new Size(180, 22);
-            cidadesToolStripMenuItem.Text = "C&idades";
+            cidadesToolStripMenuItem.Text = "&Cidades";
             cidadesToolStripMenuItem.Click += cidadesToolStripMenuItem_Click;
             // 
             // clientesToolStripMenuItem
@@ -102,11 +102,12 @@
             toolStripMenuItem3.Name = "toolStripMenuItem3";
             toolStripMenuItem3.Size = new Size(177, 6);
             // 
-            // cachorroToolStripMenuItem
+            // cachorrosToolStripMenuItem
             // 
-            cachorroToolStripMenuItem.Name = "cachorroToolStripMenuItem";
-            cachorroToolStripMenuItem.Size = new Size(180, 22);
-            cachorroToolStripMenuItem.Text = "&Cachorros";
+            cachorrosToolStripMenuItem.Name = "cachorrosToolStripMenuItem";
+            cachorrosToolStripMenuItem.Size = new Size(180, 22);
+            cachorrosToolStripMenuItem.Text = "&Cachorros";
+            //cachorrosToolStripMenuItem.Click += cachorrosToolStripMenuItem_Click;
             // 
             // relatóriosToolStripMenuItem
             // 
@@ -125,7 +126,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             Name = "FormPrincipal";
-            Text = "IFSP - Sistema de Gerenciamento Acadêmico";
+            Text = "Adestramento Magali";
             WindowState = FormWindowState.Maximized;
             FormClosing += FormPrincipal_FormClosing;
             menuStrip1.ResumeLayout(false);
@@ -138,13 +139,13 @@
 
         private MenuStrip menuStrip1;
         private ToolStripMenuItem cadastrosToolStripMenuItem;
-        private ToolStripMenuItem usuáriosToolStripMenuItem;
+        private ToolStripMenuItem adestradoresToolStripMenuItem;
         private ToolStripSeparator toolStripMenuItem1;
         private ToolStripMenuItem equipamentosToolStripMenuItem;
         private ToolStripSeparator toolStripMenuItem2;
         private ToolStripMenuItem cidadesToolStripMenuItem;
         private ToolStripMenuItem clientesToolStripMenuItem;
-        private ToolStripMenuItem cachorroToolStripMenuItem;
+        private ToolStripMenuItem cachorrosToolStripMenuItem;
         private ToolStripSeparator toolStripMenuItem3;
         private ToolStripMenuItem relatóriosToolStripMenuItem;
     }

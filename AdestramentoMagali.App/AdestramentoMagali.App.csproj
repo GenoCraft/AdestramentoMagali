@@ -6,11 +6,11 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ApplicationIcon>ifsp_icon.ico</ApplicationIcon>
+    <ApplicationIcon>magali_icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="ifsp_icon.ico" />
+    <Content Include="magali_icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,9 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Cadastros\CadastroCidade.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Update="Cadastros\CadastroCidade.cs" />
     <Compile Update="Cadastros\CadastroCachorro.cs">
       <SubType>Form</SubType>
     </Compile>

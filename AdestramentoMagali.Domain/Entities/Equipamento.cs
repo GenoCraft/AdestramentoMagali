@@ -9,20 +9,18 @@ namespace AdestramentoMagali.Domain.Entities
             
         }
 
-        public Equipamento(int id, string? nome, float preco, int quantidade, DateTime dataCompra, string? unidadeCachorro) : base(id)
+        public Equipamento(int id, string? nome, string indicacao, int quantidade, string? descricao) : base(id)
         {
             Nome = nome;
-            Preco = preco;
+            Indicacao = indicacao;
             Quantidade = quantidade;
-            DataCompra = dataCompra;
-            UnidadeCachorro = unidadeCachorro;
+            Descricao = descricao;
         }
 
         public string? Nome { get; set; }
-        public float Preco { get; set; }
+        public string Indicacao { get; set; }
         public int Quantidade { get; set; }
-        public DateTime DataCompra { get; set; }
-        public string? UnidadeCachorro { get; set; }
+        public string? Descricao { get; set; }
 
     }
 }

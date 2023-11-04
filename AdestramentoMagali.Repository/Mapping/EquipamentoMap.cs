@@ -16,14 +16,13 @@ namespace AdestramentoMagali.Repository.Mapping
                 .IsRequired()
                 .HasColumnType("varchar(100)");
 
-            builder.Property(prop => prop.Preco);
+            builder.Property(prop => prop.Indicacao)
+                .HasColumnType("varchar(100)");
 
             builder.Property(prop => prop.Quantidade);
 
-            builder.Property(prop => prop.DataCompra);
-
-            builder.Property(prop => prop.UnidadeCachorro)
-                .HasColumnType("varchar(10)");
+            builder.Property(prop => prop.Descricao)
+                .HasColumnType("varchar(200)");
         }
     }
 }

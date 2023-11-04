@@ -4,9 +4,8 @@
     {
         public int Id { get; set; }
         public string? Nome { get; set; }
-        public float Preco { get; set; }
+        public string Indicacao { get; set; }
         public int Quantidade { get; set; }
-        public DateTime DataCompra { get; set; }
-        public string? UnidadeCachorro { get; set; }
+        public string? Descricao { get; set; }
     }
 }
