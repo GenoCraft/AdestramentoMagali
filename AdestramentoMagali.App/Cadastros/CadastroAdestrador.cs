@@ -27,7 +27,7 @@ namespace AdestramentoMagali.App.Cadastros
             {
                 adestrador.Telefone = telefone;
             }
-            adestrador.Especialidade = cboEspecialidade.Text;
+            adestrador.Especialidade = txtEspecialidade.Text;
             adestrador.Ativo = chkAtivo.Checked;
         }
 
@@ -86,7 +86,7 @@ namespace AdestramentoMagali.App.Cadastros
             txtNome.Text = linha?.Cells["Nome"].Value.ToString();
             txtEmail.Text = linha?.Cells["Email"].Value.ToString();
             txtTelefone.Text = linha?.Cells["Telefone"].Value.ToString();
-            cboEspecialidade.Text = linha?.Cells["Especialidade"].Value.ToString();
+            txtEspecialidade.Text = linha?.Cells["Especialidade"].Value.ToString();
             txtSenha.Text = linha?.Cells["Senha"].Value.ToString();
             chkAtivo.Checked = (bool)(linha?.Cells["Ativo"].Value ?? false);
 

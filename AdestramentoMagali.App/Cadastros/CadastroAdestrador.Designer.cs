@@ -31,7 +31,7 @@
             txtSenha = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtNome = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtTelefone = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            cboEspecialidade = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtEspecialidade = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtDataCadastro = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtEmail = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
@@ -52,10 +52,12 @@
             tabPageCadastro.Controls.Add(txtEmail);
             tabPageCadastro.Controls.Add(txtDataCadastro);
             tabPageCadastro.Controls.Add(txtSenha);
-            tabPageCadastro.Controls.Add(txtTelefone);
-            tabPageCadastro.Controls.Add(cboEspecialidade);
             tabPageCadastro.Controls.Add(txtNome);
+            tabPageCadastro.Controls.Add(txtTelefone);
+            tabPageCadastro.Controls.Add(txtEspecialidade);
             tabPageCadastro.Size = new Size(621, 297);
+            tabPageCadastro.Controls.SetChildIndex(txtEspecialidade, 0);
+            tabPageCadastro.Controls.SetChildIndex(txtTelefone, 0);
             tabPageCadastro.Controls.SetChildIndex(txtNome, 0);
             tabPageCadastro.Controls.SetChildIndex(txtSenha, 0);
             tabPageCadastro.Controls.SetChildIndex(txtDataCadastro, 0);
@@ -125,6 +127,68 @@
             txtNome.TrailingIcon = null;
             txtNome.UseSystemPasswordChar = false;
             // 
+            // txtTelefone
+            // 
+            txtTelefone.AnimateReadOnly = false;
+            txtTelefone.AutoCompleteMode = AutoCompleteMode.None;
+            txtTelefone.AutoCompleteSource = AutoCompleteSource.None;
+            txtTelefone.BackgroundImageLayout = ImageLayout.None;
+            txtTelefone.CharacterCasing = CharacterCasing.Normal;
+            txtTelefone.Depth = 0;
+            txtTelefone.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtTelefone.HideSelection = true;
+            txtTelefone.Hint = "Telefone";
+            txtTelefone.LeadingIcon = null;
+            txtTelefone.Location = new Point(14, 114);
+            txtTelefone.MaxLength = 32767;
+            txtTelefone.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtTelefone.Name = "txtTelefone";
+            txtTelefone.PasswordChar = '\0';
+            txtTelefone.PrefixSuffixText = null;
+            txtTelefone.ReadOnly = false;
+            txtTelefone.RightToLeft = RightToLeft.No;
+            txtTelefone.SelectedText = "";
+            txtTelefone.SelectionLength = 0;
+            txtTelefone.SelectionStart = 0;
+            txtTelefone.ShortcutsEnabled = true;
+            txtTelefone.Size = new Size(216, 48);
+            txtTelefone.TabIndex = 13;
+            txtTelefone.TabStop = false;
+            txtTelefone.TextAlign = HorizontalAlignment.Left;
+            txtTelefone.TrailingIcon = null;
+            txtTelefone.UseSystemPasswordChar = false;
+            // 
+            // txtEspecialidade
+            // 
+            txtEspecialidade.AnimateReadOnly = false;
+            txtEspecialidade.AutoCompleteMode = AutoCompleteMode.None;
+            txtEspecialidade.AutoCompleteSource = AutoCompleteSource.None;
+            txtEspecialidade.BackgroundImageLayout = ImageLayout.None;
+            txtEspecialidade.CharacterCasing = CharacterCasing.Normal;
+            txtEspecialidade.Depth = 0;
+            txtEspecialidade.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtEspecialidade.HideSelection = true;
+            txtEspecialidade.Hint = "Especialidade";
+            txtEspecialidade.LeadingIcon = null;
+            txtEspecialidade.Location = new Point(236, 114);
+            txtEspecialidade.MaxLength = 32767;
+            txtEspecialidade.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtEspecialidade.Name = "txtEspecialidade";
+            txtEspecialidade.PasswordChar = '\0';
+            txtEspecialidade.PrefixSuffixText = null;
+            txtEspecialidade.ReadOnly = false;
+            txtEspecialidade.RightToLeft = RightToLeft.No;
+            txtEspecialidade.SelectedText = "";
+            txtEspecialidade.SelectionLength = 0;
+            txtEspecialidade.SelectionStart = 0;
+            txtEspecialidade.ShortcutsEnabled = true;
+            txtEspecialidade.Size = new Size(357, 48);
+            txtEspecialidade.TabIndex = 14;
+            txtEspecialidade.TabStop = false;
+            txtEspecialidade.TextAlign = HorizontalAlignment.Left;
+            txtEspecialidade.TrailingIcon = null;
+            txtEspecialidade.UseSystemPasswordChar = false;
+            // 
             // txtDataCadastro
             // 
             txtDataCadastro.AnimateReadOnly = false;
@@ -149,7 +213,7 @@
             txtDataCadastro.SelectionLength = 0;
             txtDataCadastro.SelectionStart = 0;
             txtDataCadastro.ShortcutsEnabled = true;
-            txtDataCadastro.Size = new Size(268, 48);
+            txtDataCadastro.Size = new Size(447, 48);
             txtDataCadastro.TabIndex = 4;
             txtDataCadastro.TabStop = false;
             txtDataCadastro.TextAlign = HorizontalAlignment.Left;
@@ -168,7 +232,7 @@
             txtEmail.HideSelection = true;
             txtEmail.Hint = "Email";
             txtEmail.LeadingIcon = null;
-            txtEmail.Location = new Point(14, 114);
+            txtEmail.Location = new Point(14, 60);
             txtEmail.MaxLength = 32767;
             txtEmail.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtEmail.Name = "txtEmail";
@@ -180,7 +244,7 @@
             txtEmail.SelectionLength = 0;
             txtEmail.SelectionStart = 0;
             txtEmail.ShortcutsEnabled = true;
-            txtEmail.Size = new Size(380, 48);
+            txtEmail.Size = new Size(396, 48);
             txtEmail.TabIndex = 3;
             txtEmail.TabStop = false;
             txtEmail.TextAlign = HorizontalAlignment.Left;
@@ -222,7 +286,7 @@
             // 
             chkAtivo.AutoSize = true;
             chkAtivo.Depth = 0;
-            chkAtivo.Location = new Point(447, 114);
+            chkAtivo.Location = new Point(464, 168);
             chkAtivo.Margin = new Padding(0);
             chkAtivo.MouseLocation = new Point(-1, -1);
             chkAtivo.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
@@ -235,13 +299,13 @@
             chkAtivo.UseAccentColor = false;
             chkAtivo.UseVisualStyleBackColor = true;
             // 
-            // CadastroAdestradors
+            // CadastroAdestrador
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(635, 399);
             Location = new Point(0, 0);
-            Name = "CadastroAdestradors";
+            Name = "CadastroAdestrador";
             Text = "Cadastro de Adestradores";
             materialTabControl.ResumeLayout(false);
             tabPageCadastro.ResumeLayout(false);
@@ -255,7 +319,7 @@
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtNome;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtEmail;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtTelefone;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit cboEspecialidade;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtEspecialidade;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtDataCadastro;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtId;
         private ReaLTaiizor.Controls.MaterialCheckBox chkAtivo;

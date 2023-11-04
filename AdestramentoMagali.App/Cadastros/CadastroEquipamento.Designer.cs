@@ -29,30 +29,30 @@
         private void InitializeComponent()
         {
             txtNome = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            txtIndicacao = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             mySqlCommand1 = new MySqlConnector.MySqlCommand();
             txtDescricao = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
+            txtIndicacao = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
             materialTabControl.SuspendLayout();
             tabPageCadastro.SuspendLayout();
             SuspendLayout();
             // 
             // materialTabControl
             // 
-            materialTabControl.Size = new Size(629, 332);
+            materialTabControl.Size = new Size(629, 255);
             materialTabControl.TabIndex = 0;
             // 
             // tabPageCadastro
             // 
+            tabPageCadastro.Controls.Add(txtIndicacao);
             tabPageCadastro.Controls.Add(txtDescricao);
             tabPageCadastro.Controls.Add(txtId);
-            tabPageCadastro.Controls.Add(txtIndicacao);
             tabPageCadastro.Controls.Add(txtNome);
-            tabPageCadastro.Size = new Size(621, 297);
+            tabPageCadastro.Size = new Size(621, 220);
             tabPageCadastro.Controls.SetChildIndex(txtNome, 0);
-            tabPageCadastro.Controls.SetChildIndex(txtIndicacao, 0);
             tabPageCadastro.Controls.SetChildIndex(txtId, 0);
             tabPageCadastro.Controls.SetChildIndex(txtDescricao, 0);
+            tabPageCadastro.Controls.SetChildIndex(txtIndicacao, 0);
             // 
             // txtNome
             // 
@@ -123,11 +123,95 @@
             mySqlCommand1.Transaction = null;
             mySqlCommand1.UpdatedRowSource = System.Data.UpdateRowSource.None;
             // 
+            // txtDescricao
+            // 
+            txtDescricao.AllowPromptAsInput = true;
+            txtDescricao.AnimateReadOnly = false;
+            txtDescricao.AsciiOnly = false;
+            txtDescricao.BackgroundImageLayout = ImageLayout.None;
+            txtDescricao.BeepOnError = false;
+            txtDescricao.CutCopyMaskFormat = MaskFormat.IncludeLiterals;
+            txtDescricao.Depth = 0;
+            txtDescricao.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtDescricao.HidePromptOnLeave = false;
+            txtDescricao.HideSelection = true;
+            txtDescricao.Hint = "Descrição";
+            txtDescricao.InsertKeyMode = InsertKeyMode.Default;
+            txtDescricao.LeadingIcon = null;
+            txtDescricao.Location = new Point(14, 114);
+            txtDescricao.Mask = "";
+            txtDescricao.MaxLength = 32767;
+            txtDescricao.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtDescricao.Name = "txtDescricao";
+            txtDescricao.PasswordChar = '\0';
+            txtDescricao.PrefixSuffixText = null;
+            txtDescricao.PromptChar = '_';
+            txtDescricao.ReadOnly = false;
+            txtDescricao.RejectInputOnFirstFailure = false;
+            txtDescricao.ResetOnPrompt = true;
+            txtDescricao.ResetOnSpace = true;
+            txtDescricao.RightToLeft = RightToLeft.No;
+            txtDescricao.SelectedText = "";
+            txtDescricao.SelectionLength = 0;
+            txtDescricao.SelectionStart = 0;
+            txtDescricao.ShortcutsEnabled = true;
+            txtDescricao.Size = new Size(579, 48);
+            txtDescricao.SkipLiterals = true;
+            txtDescricao.TabIndex = 11;
+            txtDescricao.TabStop = false;
+            txtDescricao.TextAlign = HorizontalAlignment.Left;
+            txtDescricao.TextMaskFormat = MaskFormat.IncludeLiterals;
+            txtDescricao.TrailingIcon = null;
+            txtDescricao.UseSystemPasswordChar = false;
+            txtDescricao.ValidatingType = null;
+            // 
+            // txtIndicacao
+            // 
+            txtIndicacao.AllowPromptAsInput = true;
+            txtIndicacao.AnimateReadOnly = false;
+            txtIndicacao.AsciiOnly = false;
+            txtIndicacao.BackgroundImageLayout = ImageLayout.None;
+            txtIndicacao.BeepOnError = false;
+            txtIndicacao.CutCopyMaskFormat = MaskFormat.IncludeLiterals;
+            txtIndicacao.Depth = 0;
+            txtIndicacao.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtIndicacao.HidePromptOnLeave = false;
+            txtIndicacao.HideSelection = true;
+            txtIndicacao.Hint = "Indicação";
+            txtIndicacao.InsertKeyMode = InsertKeyMode.Default;
+            txtIndicacao.LeadingIcon = null;
+            txtIndicacao.Location = new Point(14, 60);
+            txtIndicacao.Mask = "";
+            txtIndicacao.MaxLength = 32767;
+            txtIndicacao.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtIndicacao.Name = "txtIndicacao";
+            txtIndicacao.PasswordChar = '\0';
+            txtIndicacao.PrefixSuffixText = null;
+            txtIndicacao.PromptChar = '_';
+            txtIndicacao.ReadOnly = false;
+            txtIndicacao.RejectInputOnFirstFailure = false;
+            txtIndicacao.ResetOnPrompt = true;
+            txtIndicacao.ResetOnSpace = true;
+            txtIndicacao.RightToLeft = RightToLeft.No;
+            txtIndicacao.SelectedText = "";
+            txtIndicacao.SelectionLength = 0;
+            txtIndicacao.SelectionStart = 0;
+            txtIndicacao.ShortcutsEnabled = true;
+            txtIndicacao.Size = new Size(579, 48);
+            txtIndicacao.SkipLiterals = true;
+            txtIndicacao.TabIndex = 12;
+            txtIndicacao.TabStop = false;
+            txtIndicacao.TextAlign = HorizontalAlignment.Left;
+            txtIndicacao.TextMaskFormat = MaskFormat.IncludeLiterals;
+            txtIndicacao.TrailingIcon = null;
+            txtIndicacao.UseSystemPasswordChar = false;
+            txtIndicacao.ValidatingType = null;
+            // 
             // CadastroEquipamento
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(635, 399);
+            ClientSize = new Size(635, 322);
             Location = new Point(0, 0);
             Name = "CadastroEquipamento";
             Text = "Cadastro de Equipamentos";
@@ -139,9 +223,9 @@
         #endregion
 
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtNome;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtIndicacao;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtId;
         private MySqlConnector.MySqlCommand mySqlCommand1;
         private ReaLTaiizor.Controls.MaterialMaskedTextBox txtDescricao;
+        private ReaLTaiizor.Controls.MaterialMaskedTextBox txtIndicacao;
     }
 }
