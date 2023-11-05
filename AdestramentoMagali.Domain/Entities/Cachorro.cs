@@ -7,46 +7,36 @@ namespace AdestramentoMagali.Domain.Entities
     {
         public Cachorro()
         {
-            Items = new List<CachorroItem>();
+            Equipamentos = new List<Equipamento>();
         }
         
-        public Cachorro(int id, DateTime data, float valorTotal, Adestrador? adestrador, Cliente? cliente, List<CachorroItem> items) : base(id)
+        public Cachorro(int id, string? nome, string sexo, int? idade, string? raca, string? porte, float? peso, string? temperamento, string? tipoAdestramento, string? plano, Adestrador? adestrador, Cliente? cliente, List<Equipamento> equipamentos) : base(id)
         {
-            Data = data;
-            ValorTotal = valorTotal;
+            Nome = nome;
+            Idade = idade;
+            Sexo = sexo;
+            Raca = raca;
+            Porte = porte;
+            Peso = peso;
+            Temperamento = temperamento;
+            TipoAdestramento = tipoAdestramento;
+            Plano = plano;
             Adestrador = adestrador;
             Cliente = cliente;
-            Items = items;
+            Equipamentos = equipamentos;
         }
 
-        public DateTime Data { get; set; }
-        public float ValorTotal { get; set; }
+        public string? Nome { get; set; }
+        public int? Idade { get; set; }
+        public string? Raca { get; set; }
+        public string? Sexo { get; set; }
+        public string? Porte { get; set; }
+        public float? Peso { get; set; }
+        public string? Temperamento { get; set; }
+        public string? TipoAdestramento { get; set; }
+        public string? Plano { get; set; }
         public Adestrador? Adestrador { get; set; }
         public Cliente? Cliente { get; set; }
-        public List<CachorroItem> Items { get; set; }
-    }
-
-    public class CachorroItem : BaseEntity<int>
-    {
-        public CachorroItem()
-        {
-            
-        }
-
-        public CachorroItem(int id, Equipamento? equipamento, int quantidade, float valorUnitario, float valorTotal, Cachorro? cachorro) : base(id)
-        {
-            Equipamento = equipamento;
-            Quantidade = quantidade;
-            ValorUnitario = valorUnitario;
-            ValorTotal = valorTotal;
-            Cachorro = cachorro;
-        }
-
-        public Equipamento? Equipamento { get; set; }
-        public int Quantidade { get; set; }
-        public float ValorUnitario { get; set; }    
-        public float ValorTotal { get; set; }
-        [JsonIgnore]
-        public Cachorro? Cachorro { get; set; }
+        public List<Equipamento> Equipamentos { get; set; }
     }
 }

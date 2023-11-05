@@ -10,7 +10,7 @@ namespace AdestramentoMagali.App.Cadastros
     {
         private readonly IBaseService<Adestrador> _adestradorService;
 
-        private List<AdestradorModel>? adestradors;
+        private List<AdestradorModel>? adestradores;
 
         public CadastroAdestrador(IBaseService<Adestrador> adestradorService)
         {
@@ -74,8 +74,8 @@ namespace AdestramentoMagali.App.Cadastros
 
         protected override void CarregaGrid()
         {
-            adestradors = _adestradorService.Get<AdestradorModel>().ToList();
-            dataGridViewConsulta.DataSource = adestradors;
+            adestradores = _adestradorService.Get<AdestradorModel>().ToList();
+            dataGridViewConsulta.DataSource = adestradores;
             dataGridViewConsulta.Columns["Senha"]!.Visible = false;
             dataGridViewConsulta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }

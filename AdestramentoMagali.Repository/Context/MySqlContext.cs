@@ -18,7 +18,6 @@ namespace AdestramentoMagali.Repository.Context
         public DbSet<Cliente>? Cliente { get; set; }
         public DbSet<Equipamento>? Equipamento { get; set; }
         public DbSet<Cachorro>? Cachorro { get; set; }
-        public DbSet<CachorroItem>? CachorroItem { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -29,7 +28,6 @@ namespace AdestramentoMagali.Repository.Context
             modelBuilder.Entity<Cliente>(new ClienteMap().Configure);
             modelBuilder.Entity<Equipamento>(new EquipamentoMap().Configure);
             modelBuilder.Entity<Cachorro>(new CachorroMap().Configure);
-            modelBuilder.Entity<CachorroItem>(new CachorroItemMap().Configure);
         }
     }
 }

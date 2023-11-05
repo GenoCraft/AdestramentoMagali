@@ -62,6 +62,7 @@ namespace AdestramentoMagali.App.Infra
             Services.AddTransient<CadastroEquipamento, CadastroEquipamento>();
             Services.AddTransient<CadastroCidade, CadastroCidade>();
             Services.AddTransient<CadastroCliente, CadastroCliente>();
+            Services.AddTransient<CadastroCachorro, CadastroCachorro>();
 
             // Mapping
             Services.AddSingleton(new MapperConfiguration(config =>
@@ -73,8 +74,8 @@ namespace AdestramentoMagali.App.Infra
                     .ForMember(d => d.Cidade, 
                     d => d.MapFrom(x => $"{x.Cidade!.Nome}/{x.Cidade!.Estado}"))
                     .ForMember(d => d.IdCidade, d => d.MapFrom(x => x.Cidade!.Id));
-                //config.CreateMap<Cachorro, Cachorro>();
-                //config.CreateMap<CachorroItem, CachorroItem>();
+                config.CreateMap<Equipamento, EquipamentoModel>();
+                config.CreateMap<Cachorro, CachorroModel>();
 
             }).CreateMapper());
 

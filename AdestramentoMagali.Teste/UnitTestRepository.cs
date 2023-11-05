@@ -15,7 +15,6 @@ namespace AdestramentoMagali.Teste
             public DbSet<Cliente> Cliente { get; set; }
             public DbSet<Equipamento> Equipamento { get; set; }
             public DbSet<Cachorro> Cachorro { get; set; }
-            public DbSet<CachorroItem> CachorroItem { get; set; }
 
             public MyDbContext()
             {
