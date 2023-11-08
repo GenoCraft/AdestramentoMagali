@@ -110,7 +110,7 @@
             txtId.SelectionStart = 0;
             txtId.ShortcutsEnabled = true;
             txtId.Size = new Size(89, 48);
-            txtId.TabIndex = 1;
+            txtId.TabIndex = 3;
             txtId.TabStop = false;
             txtId.TextAlign = HorizontalAlignment.Left;
             txtId.TrailingIcon = null;
@@ -157,7 +157,7 @@
             txtDescricao.ShortcutsEnabled = true;
             txtDescricao.Size = new Size(579, 48);
             txtDescricao.SkipLiterals = true;
-            txtDescricao.TabIndex = 11;
+            txtDescricao.TabIndex = 2;
             txtDescricao.TabStop = false;
             txtDescricao.TextAlign = HorizontalAlignment.Left;
             txtDescricao.TextMaskFormat = MaskFormat.IncludeLiterals;
@@ -199,7 +199,7 @@
             txtIndicacao.ShortcutsEnabled = true;
             txtIndicacao.Size = new Size(579, 48);
             txtIndicacao.SkipLiterals = true;
-            txtIndicacao.TabIndex = 12;
+            txtIndicacao.TabIndex = 1;
             txtIndicacao.TabStop = false;
             txtIndicacao.TextAlign = HorizontalAlignment.Left;
             txtIndicacao.TextMaskFormat = MaskFormat.IncludeLiterals;

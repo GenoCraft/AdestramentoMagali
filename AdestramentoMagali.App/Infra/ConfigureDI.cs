@@ -75,7 +75,13 @@ namespace AdestramentoMagali.App.Infra
                     d => d.MapFrom(x => $"{x.Cidade!.Nome}/{x.Cidade!.Estado}"))
                     .ForMember(d => d.IdCidade, d => d.MapFrom(x => x.Cidade!.Id));
                 config.CreateMap<Equipamento, EquipamentoModel>();
-                config.CreateMap<Cachorro, CachorroModel>();
+                config.CreateMap<Cachorro, CachorroModel>()
+                    .ForMember(d => d.Adestrador,
+                    d => d.MapFrom(x => $"{x.Adestrador!.Nome}"))
+                    .ForMember(d => d.IdAdestrador, d => d.MapFrom(x => x.Adestrador!.Id))
+                    .ForMember(d => d.Cliente,
+                    d => d.MapFrom(x => $"{x.Cliente!.Nome}"))
+                    .ForMember(d => d.IdCliente, d => d.MapFrom(x => x.Cliente!.Id));
 
             }).CreateMapper());
 

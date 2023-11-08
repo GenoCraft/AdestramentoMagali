@@ -12,6 +12,8 @@ namespace AdestramentoMagali.Repository.Mapping
 
             builder.HasKey(prop => prop.Id);
 
+            builder.HasKey(prop => prop.Nome);
+
             builder.HasKey(prop => prop.Idade);
 
             builder.HasKey(prop => prop.Raca);

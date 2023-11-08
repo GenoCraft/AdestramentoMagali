@@ -42,6 +42,7 @@ namespace AdestramentoMagali.App.Cadastros
             }
             cachorro.Sexo = cboSexo.Text;
             cachorro.Raca = txtRaca.Text;
+            cachorro.Porte = txtPorte.Text;
             if (float.TryParse(txtPeso.Text, out var peso))
             {
                 cachorro.Peso = peso;
@@ -121,11 +122,11 @@ namespace AdestramentoMagali.App.Cadastros
             txtNome.Text = linha?.Cells["Nome"].Value.ToString();
             txtIdade.Text = linha?.Cells["Idade"].Value.ToString();
             cboSexo.Text = linha?.Cells["Sexo"].Value.ToString();
-            txtRaca.Text = linha?.Cells["Raça"].Value.ToString();
+            txtRaca.Text = linha?.Cells["Raca"].Value.ToString();
             txtPorte.Text = linha?.Cells["Porte"].Value.ToString();
             txtPeso.Text = linha?.Cells["Peso"].Value.ToString();
             txtTemperamento.Text = linha?.Cells["Temperamento"].Value.ToString();
-            txtTipoAdestramento.Text = linha?.Cells["Tipo de adestramento"].Value.ToString();
+            txtTipoAdestramento.Text = linha?.Cells["TipoAdestramento"].Value.ToString();
             txtPlano.Text = linha?.Cells["Plano"].Value.ToString();
             cboAdestrador.SelectedValue = linha?.Cells["IdAdestrador"].Value;
             cboCliente.SelectedValue = linha?.Cells["IdCliente"].Value;

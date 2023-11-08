@@ -135,7 +135,7 @@
             txtTelefone.BackgroundImageLayout = ImageLayout.None;
             txtTelefone.CharacterCasing = CharacterCasing.Normal;
             txtTelefone.Depth = 0;
-            txtTelefone.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtTelefone.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtTelefone.HideSelection = true;
             txtTelefone.Hint = "Telefone";
             txtTelefone.LeadingIcon = null;
@@ -152,7 +152,7 @@
             txtTelefone.SelectionStart = 0;
             txtTelefone.ShortcutsEnabled = true;
             txtTelefone.Size = new Size(216, 48);
-            txtTelefone.TabIndex = 13;
+            txtTelefone.TabIndex = 3;
             txtTelefone.TabStop = false;
             txtTelefone.TextAlign = HorizontalAlignment.Left;
             txtTelefone.TrailingIcon = null;
@@ -166,7 +166,7 @@
             txtEspecialidade.BackgroundImageLayout = ImageLayout.None;
             txtEspecialidade.CharacterCasing = CharacterCasing.Normal;
             txtEspecialidade.Depth = 0;
-            txtEspecialidade.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtEspecialidade.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtEspecialidade.HideSelection = true;
             txtEspecialidade.Hint = "Especialidade";
             txtEspecialidade.LeadingIcon = null;
@@ -183,7 +183,7 @@
             txtEspecialidade.SelectionStart = 0;
             txtEspecialidade.ShortcutsEnabled = true;
             txtEspecialidade.Size = new Size(357, 48);
-            txtEspecialidade.TabIndex = 14;
+            txtEspecialidade.TabIndex = 4;
             txtEspecialidade.TabStop = false;
             txtEspecialidade.TextAlign = HorizontalAlignment.Left;
             txtEspecialidade.TrailingIcon = null;
@@ -214,7 +214,7 @@
             txtDataCadastro.SelectionStart = 0;
             txtDataCadastro.ShortcutsEnabled = true;
             txtDataCadastro.Size = new Size(447, 48);
-            txtDataCadastro.TabIndex = 4;
+            txtDataCadastro.TabIndex = 5;
             txtDataCadastro.TabStop = false;
             txtDataCadastro.TextAlign = HorizontalAlignment.Left;
             txtDataCadastro.TrailingIcon = null;
@@ -245,7 +245,7 @@
             txtEmail.SelectionStart = 0;
             txtEmail.ShortcutsEnabled = true;
             txtEmail.Size = new Size(396, 48);
-            txtEmail.TabIndex = 3;
+            txtEmail.TabIndex = 1;
             txtEmail.TabStop = false;
             txtEmail.TextAlign = HorizontalAlignment.Left;
             txtEmail.TrailingIcon = null;
@@ -276,7 +276,7 @@
             txtId.SelectionStart = 0;
             txtId.ShortcutsEnabled = true;
             txtId.Size = new Size(89, 48);
-            txtId.TabIndex = 11;
+            txtId.TabIndex = 7;
             txtId.TabStop = false;
             txtId.TextAlign = HorizontalAlignment.Left;
             txtId.TrailingIcon = null;
@@ -294,7 +294,7 @@
             chkAtivo.ReadOnly = false;
             chkAtivo.Ripple = true;
             chkAtivo.Size = new Size(129, 37);
-            chkAtivo.TabIndex = 12;
+            chkAtivo.TabIndex = 6;
             chkAtivo.Text = "Usuário Ativo";
             chkAtivo.UseAccentColor = false;
             chkAtivo.UseVisualStyleBackColor = true;

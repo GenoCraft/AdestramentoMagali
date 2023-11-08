@@ -84,7 +84,7 @@ namespace AdestramentoMagali.App.Cadastros
 
         protected override void CarregaGrid()
         {
-            clientes = _clienteService.Get<ClienteModel>(new[] { "Cidade" }).ToList();            
+            clientes = _clienteService.Get<ClienteModel>(new[] { "Cidade" }).ToList();
             dataGridViewConsulta.DataSource = clientes;
             dataGridViewConsulta.Columns["Nome"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewConsulta.Columns["IdCidade"]!.Visible = false;

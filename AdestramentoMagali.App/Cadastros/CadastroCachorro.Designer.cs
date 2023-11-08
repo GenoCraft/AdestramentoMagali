@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            groupBox1 = new GroupBox();
             cboEquipamento = new ReaLTaiizor.Controls.MaterialComboBox();
-            dataGridView1 = new DataGridView();
             cboCliente = new ReaLTaiizor.Controls.MaterialComboBox();
             cboAdestrador = new ReaLTaiizor.Controls.MaterialComboBox();
             txtNome = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
@@ -45,17 +43,16 @@
             txtPlano = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             materialTabControl.SuspendLayout();
             tabPageCadastro.SuspendLayout();
-            groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // materialTabControl
             // 
-            materialTabControl.Size = new Size(629, 486);
+            materialTabControl.Size = new Size(629, 365);
             materialTabControl.TabIndex = 0;
             // 
             // tabPageCadastro
             // 
+            tabPageCadastro.Controls.Add(cboEquipamento);
             tabPageCadastro.Controls.Add(txtNome);
             tabPageCadastro.Controls.Add(txtIdade);
             tabPageCadastro.Controls.Add(cboSexo);
@@ -67,11 +64,9 @@
             tabPageCadastro.Controls.Add(txtPlano);
             tabPageCadastro.Controls.Add(cboAdestrador);
             tabPageCadastro.Controls.Add(cboCliente);
-            tabPageCadastro.Controls.Add(groupBox1);
             tabPageCadastro.Controls.Add(txtId);
-            tabPageCadastro.Size = new Size(621, 451);
+            tabPageCadastro.Size = new Size(621, 330);
             tabPageCadastro.Controls.SetChildIndex(txtId, 0);
-            tabPageCadastro.Controls.SetChildIndex(groupBox1, 0);
             tabPageCadastro.Controls.SetChildIndex(cboCliente, 0);
             tabPageCadastro.Controls.SetChildIndex(cboAdestrador, 0);
             tabPageCadastro.Controls.SetChildIndex(txtPlano, 0);
@@ -83,6 +78,11 @@
             tabPageCadastro.Controls.SetChildIndex(cboSexo, 0);
             tabPageCadastro.Controls.SetChildIndex(txtIdade, 0);
             tabPageCadastro.Controls.SetChildIndex(txtNome, 0);
+            tabPageCadastro.Controls.SetChildIndex(cboEquipamento, 0);
+            // 
+            // tabPageConsulta
+            // 
+            tabPageConsulta.Size = new Size(621, 330);
             // 
             // txtId
             // 
@@ -109,22 +109,11 @@
             txtId.SelectionStart = 0;
             txtId.ShortcutsEnabled = true;
             txtId.Size = new Size(107, 48);
-            txtId.TabIndex = 11;
+            txtId.TabIndex = 12;
             txtId.TabStop = false;
             txtId.TextAlign = HorizontalAlignment.Left;
             txtId.TrailingIcon = null;
             txtId.UseSystemPasswordChar = false;
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(cboEquipamento);
-            groupBox1.Controls.Add(dataGridView1);
-            groupBox1.Location = new Point(377, 223);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(229, 74);
-            groupBox1.TabIndex = 13;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Equipamentos necessários";
             // 
             // cboEquipamento
             // 
@@ -138,25 +127,16 @@
             cboEquipamento.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             cboEquipamento.ForeColor = Color.FromArgb(222, 0, 0, 0);
             cboEquipamento.FormattingEnabled = true;
-            cboEquipamento.Hint = "Equipamento";
+            cboEquipamento.Hint = "Equipamentos";
             cboEquipamento.IntegralHeight = false;
             cboEquipamento.ItemHeight = 43;
-            cboEquipamento.Location = new Point(6, 19);
+            cboEquipamento.Location = new Point(377, 222);
             cboEquipamento.MaxDropDownItems = 4;
             cboEquipamento.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboEquipamento.Name = "cboEquipamento";
-            cboEquipamento.Size = new Size(215, 49);
+            cboEquipamento.Size = new Size(234, 49);
             cboEquipamento.StartIndex = 0;
-            cboEquipamento.TabIndex = 15;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Bottom;
-            dataGridView1.Location = new Point(3, 17);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(223, 54);
-            dataGridView1.TabIndex = 13;
+            cboEquipamento.TabIndex = 11;
             // 
             // cboCliente
             // 
@@ -179,7 +159,7 @@
             cboCliente.Name = "cboCliente";
             cboCliente.Size = new Size(292, 49);
             cboCliente.StartIndex = 0;
-            cboCliente.TabIndex = 14;
+            cboCliente.TabIndex = 9;
             // 
             // cboAdestrador
             // 
@@ -202,7 +182,7 @@
             cboAdestrador.Name = "cboAdestrador";
             cboAdestrador.Size = new Size(307, 49);
             cboAdestrador.StartIndex = 0;
-            cboAdestrador.TabIndex = 15;
+            cboAdestrador.TabIndex = 8;
             // 
             // txtNome
             // 
@@ -214,6 +194,7 @@
             txtNome.Depth = 0;
             txtNome.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtNome.HideSelection = true;
+            txtNome.Hint = "Nome";
             txtNome.LeadingIcon = null;
             txtNome.Location = new Point(6, 6);
             txtNome.MaxLength = 32767;
@@ -228,7 +209,7 @@
             txtNome.SelectionStart = 0;
             txtNome.ShortcutsEnabled = true;
             txtNome.Size = new Size(272, 48);
-            txtNome.TabIndex = 11;
+            txtNome.TabIndex = 0;
             txtNome.TabStop = false;
             txtNome.TextAlign = HorizontalAlignment.Left;
             txtNome.TrailingIcon = null;
@@ -244,6 +225,7 @@
             txtIdade.Depth = 0;
             txtIdade.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtIdade.HideSelection = true;
+            txtIdade.Hint = "Idade";
             txtIdade.LeadingIcon = null;
             txtIdade.Location = new Point(285, 6);
             txtIdade.MaxLength = 32767;
@@ -258,7 +240,7 @@
             txtIdade.SelectionStart = 0;
             txtIdade.ShortcutsEnabled = true;
             txtIdade.Size = new Size(86, 48);
-            txtIdade.TabIndex = 12;
+            txtIdade.TabIndex = 1;
             txtIdade.TabStop = false;
             txtIdade.TextAlign = HorizontalAlignment.Left;
             txtIdade.TrailingIcon = null;
@@ -275,15 +257,17 @@
             cboSexo.DropDownWidth = 121;
             cboSexo.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             cboSexo.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboSexo.Hint = "Sexo";
             cboSexo.IntegralHeight = false;
             cboSexo.ItemHeight = 43;
+            cboSexo.Items.AddRange(new object[] { "Macho", "Fêmea" });
             cboSexo.Location = new Point(377, 6);
             cboSexo.MaxDropDownItems = 4;
             cboSexo.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboSexo.Name = "cboSexo";
             cboSexo.Size = new Size(121, 49);
             cboSexo.StartIndex = 0;
-            cboSexo.TabIndex = 13;
+            cboSexo.TabIndex = 2;
             // 
             // txtRaca
             // 
@@ -295,6 +279,7 @@
             txtRaca.Depth = 0;
             txtRaca.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtRaca.HideSelection = true;
+            txtRaca.Hint = "Raça";
             txtRaca.LeadingIcon = null;
             txtRaca.Location = new Point(6, 60);
             txtRaca.MaxLength = 32767;
@@ -309,7 +294,7 @@
             txtRaca.SelectionStart = 0;
             txtRaca.ShortcutsEnabled = true;
             txtRaca.Size = new Size(262, 48);
-            txtRaca.TabIndex = 14;
+            txtRaca.TabIndex = 3;
             txtRaca.TabStop = false;
             txtRaca.TextAlign = HorizontalAlignment.Left;
             txtRaca.TrailingIcon = null;
@@ -325,6 +310,7 @@
             txtPorte.Depth = 0;
             txtPorte.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtPorte.HideSelection = true;
+            txtPorte.Hint = "Porte";
             txtPorte.LeadingIcon = null;
             txtPorte.Location = new Point(274, 60);
             txtPorte.MaxLength = 32767;
@@ -339,7 +325,7 @@
             txtPorte.SelectionStart = 0;
             txtPorte.ShortcutsEnabled = true;
             txtPorte.Size = new Size(224, 48);
-            txtPorte.TabIndex = 15;
+            txtPorte.TabIndex = 4;
             txtPorte.TabStop = false;
             txtPorte.TextAlign = HorizontalAlignment.Left;
             txtPorte.TrailingIcon = null;
@@ -355,6 +341,7 @@
             txtPeso.Depth = 0;
             txtPeso.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtPeso.HideSelection = true;
+            txtPeso.Hint = "Peso";
             txtPeso.LeadingIcon = null;
             txtPeso.Location = new Point(504, 60);
             txtPeso.MaxLength = 32767;
@@ -369,7 +356,7 @@
             txtPeso.SelectionStart = 0;
             txtPeso.ShortcutsEnabled = true;
             txtPeso.Size = new Size(107, 48);
-            txtPeso.TabIndex = 16;
+            txtPeso.TabIndex = 5;
             txtPeso.TabStop = false;
             txtPeso.TextAlign = HorizontalAlignment.Left;
             txtPeso.TrailingIcon = null;
@@ -385,6 +372,7 @@
             txtTemperamento.Depth = 0;
             txtTemperamento.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtTemperamento.HideSelection = true;
+            txtTemperamento.Hint = "Temperamento";
             txtTemperamento.LeadingIcon = null;
             txtTemperamento.Location = new Point(6, 114);
             txtTemperamento.MaxLength = 32767;
@@ -399,7 +387,7 @@
             txtTemperamento.SelectionStart = 0;
             txtTemperamento.ShortcutsEnabled = true;
             txtTemperamento.Size = new Size(326, 48);
-            txtTemperamento.TabIndex = 17;
+            txtTemperamento.TabIndex = 6;
             txtTemperamento.TabStop = false;
             txtTemperamento.TextAlign = HorizontalAlignment.Left;
             txtTemperamento.TrailingIcon = null;
@@ -415,6 +403,7 @@
             txtTipoAdestramento.Depth = 0;
             txtTipoAdestramento.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtTipoAdestramento.HideSelection = true;
+            txtTipoAdestramento.Hint = "Tipo de adestramento";
             txtTipoAdestramento.LeadingIcon = null;
             txtTipoAdestramento.Location = new Point(338, 114);
             txtTipoAdestramento.MaxLength = 32767;
@@ -429,7 +418,7 @@
             txtTipoAdestramento.SelectionStart = 0;
             txtTipoAdestramento.ShortcutsEnabled = true;
             txtTipoAdestramento.Size = new Size(273, 48);
-            txtTipoAdestramento.TabIndex = 18;
+            txtTipoAdestramento.TabIndex = 7;
             txtTipoAdestramento.TabStop = false;
             txtTipoAdestramento.TextAlign = HorizontalAlignment.Left;
             txtTipoAdestramento.TrailingIcon = null;
@@ -445,6 +434,7 @@
             txtPlano.Depth = 0;
             txtPlano.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtPlano.HideSelection = true;
+            txtPlano.Hint = "Plano";
             txtPlano.LeadingIcon = null;
             txtPlano.Location = new Point(6, 223);
             txtPlano.MaxLength = 32767;
@@ -459,7 +449,7 @@
             txtPlano.SelectionStart = 0;
             txtPlano.ShortcutsEnabled = true;
             txtPlano.Size = new Size(365, 48);
-            txtPlano.TabIndex = 19;
+            txtPlano.TabIndex = 10;
             txtPlano.TabStop = false;
             txtPlano.TextAlign = HorizontalAlignment.Left;
             txtPlano.TrailingIcon = null;
@@ -469,21 +459,17 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(635, 553);
+            ClientSize = new Size(635, 432);
             Location = new Point(0, 0);
             Name = "CadastroCachorro";
             Text = "Cadastro de Cachorros";
             materialTabControl.ResumeLayout(false);
             tabPageCadastro.ResumeLayout(false);
-            groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtId;
-        private GroupBox groupBox1;
-        private DataGridView dataGridView1;
         private ReaLTaiizor.Controls.MaterialComboBox cboAdestrador;
         private ReaLTaiizor.Controls.MaterialComboBox cboCliente;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtNome;

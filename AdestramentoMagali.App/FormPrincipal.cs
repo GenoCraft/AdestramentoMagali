@@ -41,6 +41,11 @@ namespace AdestramentoMagali.App
             Exibeformulario<CadastroCliente>();
         }
 
+        private void cachorrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exibeformulario<CadastroCachorro>();
+        }
+
         private void Exibeformulario<TFormlario>() where TFormlario : Form
         {
             var cad = ConfigureDI.ServicesProvider!.GetService<TFormlario>();

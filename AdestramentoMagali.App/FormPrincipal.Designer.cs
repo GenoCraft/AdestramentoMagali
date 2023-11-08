@@ -107,7 +107,7 @@
             cachorrosToolStripMenuItem.Name = "cachorrosToolStripMenuItem";
             cachorrosToolStripMenuItem.Size = new Size(180, 22);
             cachorrosToolStripMenuItem.Text = "&Cachorros";
-            //cachorrosToolStripMenuItem.Click += cachorrosToolStripMenuItem_Click;
+            cachorrosToolStripMenuItem.Click += cachorrosToolStripMenuItem_Click;
             // 
             // relatóriosToolStripMenuItem
             // 

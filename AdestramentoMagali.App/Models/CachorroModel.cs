@@ -12,7 +12,8 @@ public class CachorroModel
     public string? Temperamento { get; set; }
     public string? TipoAdestramento { get; set; }
     public string? Plano { get; set; }
-    public Adestrador? Adestrador { get; set; }
-    public Cliente? Cliente { get; set; }
-    public List<Equipamento> Equipamentos { get; set; }
+    public int IdAdestrador { get; set; }
+    public string Adestrador { get; set; }
+    public int IdCliente { get; set; }
+    public string Cliente { get; set; }
 }

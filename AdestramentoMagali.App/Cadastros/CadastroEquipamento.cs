@@ -66,6 +66,13 @@ namespace AdestramentoMagali.App.Cadastros
             }
         }
 
+        protected override void CarregaGrid()
+        {
+            equipamentos = _equipamentoService.Get<EquipamentoModel>().ToList();
+            dataGridViewConsulta.DataSource = equipamentos;
+            dataGridViewConsulta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+
         protected override void CarregaRegistro(DataGridViewRow? linha)
         {
             txtId.Text = linha?.Cells["Id"].Value.ToString();

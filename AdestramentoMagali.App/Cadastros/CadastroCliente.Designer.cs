@@ -113,7 +113,7 @@
             txtEndereco.SelectionStart = 0;
             txtEndereco.ShortcutsEnabled = true;
             txtEndereco.Size = new Size(579, 48);
-            txtEndereco.TabIndex = 2;
+            txtEndereco.TabIndex = 1;
             txtEndereco.TabStop = false;
             txtEndereco.TextAlign = HorizontalAlignment.Left;
             txtEndereco.TrailingIcon = null;
@@ -144,7 +144,7 @@
             txtId.SelectionStart = 0;
             txtId.ShortcutsEnabled = true;
             txtId.Size = new Size(89, 48);
-            txtId.TabIndex = 1;
+            txtId.TabIndex = 4;
             txtId.TabStop = false;
             txtId.TextAlign = HorizontalAlignment.Left;
             txtId.TrailingIcon = null;
@@ -178,7 +178,7 @@
             cboCidade.Name = "cboCidade";
             cboCidade.Size = new Size(579, 49);
             cboCidade.StartIndex = 0;
-            cboCidade.TabIndex = 4;
+            cboCidade.TabIndex = 3;
             // 
             // txtBairro
             // 
@@ -205,7 +205,7 @@
             txtBairro.SelectionStart = 0;
             txtBairro.ShortcutsEnabled = true;
             txtBairro.Size = new Size(579, 48);
-            txtBairro.TabIndex = 3;
+            txtBairro.TabIndex = 2;
             txtBairro.TabStop = false;
             txtBairro.TextAlign = HorizontalAlignment.Left;
             txtBairro.TrailingIcon = null;
