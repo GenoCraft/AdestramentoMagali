@@ -12,23 +12,41 @@ namespace AdestramentoMagali.Repository.Mapping
 
             builder.HasKey(prop => prop.Id);
 
-            builder.HasKey(prop => prop.Nome);
+            builder.Property(prop => prop.Nome)
+                .IsRequired()
+                .HasColumnType("varchar(100)");
 
-            builder.HasKey(prop => prop.Idade);
+            builder.Property(prop => prop.Idade)
+                .IsRequired()
+                .HasColumnType("int");
 
-            builder.HasKey(prop => prop.Raca);
+            builder.Property(prop => prop.Raca)
+                .IsRequired()
+                .HasColumnType("varchar(100)");
 
-            builder.HasKey(prop => prop.Sexo);
+            builder.Property(prop => prop.Sexo)
+                .IsRequired()
+                .HasColumnType("varchar(100)");
 
-            builder.HasKey(prop => prop.Porte);
+            builder.Property(prop => prop.Porte)
+                .IsRequired()
+                .HasColumnType("varchar(100)");
 
-            builder.HasKey(prop => prop.Peso);
+            builder.Property(prop => prop.Peso)
+                .IsRequired()
+                .HasColumnType("decimal");
 
-            builder.HasKey(prop => prop.Temperamento);
+            builder.Property(prop => prop.Temperamento)
+                .IsRequired()
+                .HasColumnType("varchar(100)");
 
-            builder.HasKey(prop => prop.TipoAdestramento);
+            builder.Property(prop => prop.TipoAdestramento)
+                .IsRequired()
+                .HasColumnType("varchar(100)");
 
-            builder.HasKey(prop => prop.Plano);
+            builder.Property(prop => prop.Plano)
+                .IsRequired()
+                .HasColumnType("varchar(100)");
 
             builder.HasOne(prop => prop.Adestrador);
 

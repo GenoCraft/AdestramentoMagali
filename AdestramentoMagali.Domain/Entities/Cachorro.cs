@@ -1,5 +1,4 @@
-﻿using System.Text.Json.Serialization;
-using AdestramentoMagali.Domain.Base;
+﻿using AdestramentoMagali.Domain.Base;
 
 namespace AdestramentoMagali.Domain.Entities
 {

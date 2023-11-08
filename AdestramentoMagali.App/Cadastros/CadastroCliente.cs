@@ -34,9 +34,9 @@ namespace AdestramentoMagali.App.Cadastros
             cliente.Endereco = txtEndereco.Text;
             cliente.Bairro = txtBairro.Text;
 
-            if (int.TryParse(cboCidade.SelectedValue.ToString(), out var idGrupo))
+            if (int.TryParse(cboCidade.SelectedValue.ToString(), out var idCidade))
             {
-                var cidade = _cidadeService.GetById<Cidade>(idGrupo);
+                var cidade = _cidadeService.GetById<Cidade>(idCidade);
                 cliente.Cidade = cidade;
             }
         }

@@ -33,6 +33,7 @@
             mySqlCommand1 = new MySqlConnector.MySqlCommand();
             txtDescricao = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
             txtIndicacao = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
+            txtQuantidade = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             materialTabControl.SuspendLayout();
             tabPageCadastro.SuspendLayout();
             SuspendLayout();
@@ -44,6 +45,7 @@
             // 
             // tabPageCadastro
             // 
+            tabPageCadastro.Controls.Add(txtQuantidade);
             tabPageCadastro.Controls.Add(txtIndicacao);
             tabPageCadastro.Controls.Add(txtDescricao);
             tabPageCadastro.Controls.Add(txtId);
@@ -53,6 +55,7 @@
             tabPageCadastro.Controls.SetChildIndex(txtId, 0);
             tabPageCadastro.Controls.SetChildIndex(txtDescricao, 0);
             tabPageCadastro.Controls.SetChildIndex(txtIndicacao, 0);
+            tabPageCadastro.Controls.SetChildIndex(txtQuantidade, 0);
             // 
             // txtNome
             // 
@@ -78,7 +81,7 @@
             txtNome.SelectionLength = 0;
             txtNome.SelectionStart = 0;
             txtNome.ShortcutsEnabled = true;
-            txtNome.Size = new Size(484, 48);
+            txtNome.Size = new Size(310, 48);
             txtNome.TabIndex = 0;
             txtNome.TabStop = false;
             txtNome.TextAlign = HorizontalAlignment.Left;
@@ -207,6 +210,37 @@
             txtIndicacao.UseSystemPasswordChar = false;
             txtIndicacao.ValidatingType = null;
             // 
+            // txtQuantidade
+            // 
+            txtQuantidade.AnimateReadOnly = false;
+            txtQuantidade.AutoCompleteMode = AutoCompleteMode.None;
+            txtQuantidade.AutoCompleteSource = AutoCompleteSource.None;
+            txtQuantidade.BackgroundImageLayout = ImageLayout.None;
+            txtQuantidade.CharacterCasing = CharacterCasing.Normal;
+            txtQuantidade.Depth = 0;
+            txtQuantidade.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtQuantidade.HideSelection = true;
+            txtQuantidade.Hint = "Quantidade";
+            txtQuantidade.LeadingIcon = null;
+            txtQuantidade.Location = new Point(330, 6);
+            txtQuantidade.MaxLength = 32767;
+            txtQuantidade.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtQuantidade.Name = "txtQuantidade";
+            txtQuantidade.PasswordChar = '\0';
+            txtQuantidade.PrefixSuffixText = null;
+            txtQuantidade.ReadOnly = false;
+            txtQuantidade.RightToLeft = RightToLeft.No;
+            txtQuantidade.SelectedText = "";
+            txtQuantidade.SelectionLength = 0;
+            txtQuantidade.SelectionStart = 0;
+            txtQuantidade.ShortcutsEnabled = true;
+            txtQuantidade.Size = new Size(168, 48);
+            txtQuantidade.TabIndex = 11;
+            txtQuantidade.TabStop = false;
+            txtQuantidade.TextAlign = HorizontalAlignment.Left;
+            txtQuantidade.TrailingIcon = null;
+            txtQuantidade.UseSystemPasswordChar = false;
+            // 
             // CadastroEquipamento
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -227,5 +261,6 @@
         private MySqlConnector.MySqlCommand mySqlCommand1;
         private ReaLTaiizor.Controls.MaterialMaskedTextBox txtDescricao;
         private ReaLTaiizor.Controls.MaterialMaskedTextBox txtIndicacao;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtQuantidade;
     }
 }

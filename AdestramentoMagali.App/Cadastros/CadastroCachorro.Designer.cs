@@ -192,7 +192,7 @@
             txtNome.BackgroundImageLayout = ImageLayout.None;
             txtNome.CharacterCasing = CharacterCasing.Normal;
             txtNome.Depth = 0;
-            txtNome.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtNome.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtNome.HideSelection = true;
             txtNome.Hint = "Nome";
             txtNome.LeadingIcon = null;
@@ -223,7 +223,7 @@
             txtIdade.BackgroundImageLayout = ImageLayout.None;
             txtIdade.CharacterCasing = CharacterCasing.Normal;
             txtIdade.Depth = 0;
-            txtIdade.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtIdade.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtIdade.HideSelection = true;
             txtIdade.Hint = "Idade";
             txtIdade.LeadingIcon = null;
@@ -277,7 +277,7 @@
             txtRaca.BackgroundImageLayout = ImageLayout.None;
             txtRaca.CharacterCasing = CharacterCasing.Normal;
             txtRaca.Depth = 0;
-            txtRaca.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtRaca.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtRaca.HideSelection = true;
             txtRaca.Hint = "Raça";
             txtRaca.LeadingIcon = null;
@@ -308,7 +308,7 @@
             txtPorte.BackgroundImageLayout = ImageLayout.None;
             txtPorte.CharacterCasing = CharacterCasing.Normal;
             txtPorte.Depth = 0;
-            txtPorte.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtPorte.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtPorte.HideSelection = true;
             txtPorte.Hint = "Porte";
             txtPorte.LeadingIcon = null;
@@ -339,7 +339,7 @@
             txtPeso.BackgroundImageLayout = ImageLayout.None;
             txtPeso.CharacterCasing = CharacterCasing.Normal;
             txtPeso.Depth = 0;
-            txtPeso.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtPeso.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtPeso.HideSelection = true;
             txtPeso.Hint = "Peso";
             txtPeso.LeadingIcon = null;
@@ -370,7 +370,7 @@
             txtTemperamento.BackgroundImageLayout = ImageLayout.None;
             txtTemperamento.CharacterCasing = CharacterCasing.Normal;
             txtTemperamento.Depth = 0;
-            txtTemperamento.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtTemperamento.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtTemperamento.HideSelection = true;
             txtTemperamento.Hint = "Temperamento";
             txtTemperamento.LeadingIcon = null;
@@ -401,7 +401,7 @@
             txtTipoAdestramento.BackgroundImageLayout = ImageLayout.None;
             txtTipoAdestramento.CharacterCasing = CharacterCasing.Normal;
             txtTipoAdestramento.Depth = 0;
-            txtTipoAdestramento.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtTipoAdestramento.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtTipoAdestramento.HideSelection = true;
             txtTipoAdestramento.Hint = "Tipo de adestramento";
             txtTipoAdestramento.LeadingIcon = null;
@@ -432,7 +432,7 @@
             txtPlano.BackgroundImageLayout = ImageLayout.None;
             txtPlano.CharacterCasing = CharacterCasing.Normal;
             txtPlano.Depth = 0;
-            txtPlano.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtPlano.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtPlano.HideSelection = true;
             txtPlano.Hint = "Plano";
             txtPlano.LeadingIcon = null;

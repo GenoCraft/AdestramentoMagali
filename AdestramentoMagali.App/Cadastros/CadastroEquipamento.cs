@@ -21,6 +21,10 @@ namespace AdestramentoMagali.App.Cadastros
         private void PreencheObjeto(Equipamento equipamento)
         {
             equipamento.Nome = txtNome.Text;
+            if (int.TryParse(txtQuantidade.Text, out var quantidade))
+            {
+                equipamento.Quantidade = quantidade;
+            }
             equipamento.Indicacao = txtIndicacao.Text;
             equipamento.Descricao = txtDescricao.Text;
         }
@@ -77,6 +81,7 @@ namespace AdestramentoMagali.App.Cadastros
         {
             txtId.Text = linha?.Cells["Id"].Value.ToString();
             txtNome.Text = linha?.Cells["Nome"].Value.ToString();
+            txtQuantidade.Text = linha?.Cells["Indicacao"].Value.ToString();
             txtIndicacao.Text = linha?.Cells["Indicacao"].Value.ToString();
             txtDescricao.Text = linha?.Cells["Descricao"].Value.ToString();
         }
