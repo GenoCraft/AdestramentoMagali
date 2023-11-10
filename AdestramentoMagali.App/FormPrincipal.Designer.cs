@@ -62,50 +62,50 @@
             // adestradoresToolStripMenuItem
             // 
             adestradoresToolStripMenuItem.Name = "adestradoresToolStripMenuItem";
-            adestradoresToolStripMenuItem.Size = new Size(180, 22);
+            adestradoresToolStripMenuItem.Size = new Size(150, 22);
             adestradoresToolStripMenuItem.Text = "&Adestradores";
             adestradoresToolStripMenuItem.Click += adestradoresToolStripMenuItem_Click;
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(177, 6);
+            toolStripMenuItem1.Size = new Size(147, 6);
             // 
             // equipamentosToolStripMenuItem
             // 
             equipamentosToolStripMenuItem.Name = "equipamentosToolStripMenuItem";
-            equipamentosToolStripMenuItem.Size = new Size(180, 22);
+            equipamentosToolStripMenuItem.Size = new Size(150, 22);
             equipamentosToolStripMenuItem.Text = "&Equipamentos";
             equipamentosToolStripMenuItem.Click += equipamentosToolStripMenuItem_Click;
             // 
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(177, 6);
+            toolStripMenuItem2.Size = new Size(147, 6);
             // 
             // cidadesToolStripMenuItem
             // 
             cidadesToolStripMenuItem.Name = "cidadesToolStripMenuItem";
-            cidadesToolStripMenuItem.Size = new Size(180, 22);
+            cidadesToolStripMenuItem.Size = new Size(150, 22);
             cidadesToolStripMenuItem.Text = "&Cidades";
             cidadesToolStripMenuItem.Click += cidadesToolStripMenuItem_Click;
             // 
             // clientesToolStripMenuItem
             // 
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(180, 22);
+            clientesToolStripMenuItem.Size = new Size(150, 22);
             clientesToolStripMenuItem.Text = "&Clientes";
             clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
             // 
             // toolStripMenuItem3
             // 
             toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(177, 6);
+            toolStripMenuItem3.Size = new Size(147, 6);
             // 
             // cachorrosToolStripMenuItem
             // 
             cachorrosToolStripMenuItem.Name = "cachorrosToolStripMenuItem";
-            cachorrosToolStripMenuItem.Size = new Size(180, 22);
+            cachorrosToolStripMenuItem.Size = new Size(150, 22);
             cachorrosToolStripMenuItem.Text = "&Cachorros";
             cachorrosToolStripMenuItem.Click += cachorrosToolStripMenuItem_Click;
             // 

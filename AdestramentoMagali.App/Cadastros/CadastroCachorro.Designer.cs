@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroCachorro));
             txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             cboEquipamento = new ReaLTaiizor.Controls.MaterialComboBox();
             cboCliente = new ReaLTaiizor.Controls.MaterialComboBox();
@@ -79,10 +80,6 @@
             tabPageCadastro.Controls.SetChildIndex(txtIdade, 0);
             tabPageCadastro.Controls.SetChildIndex(txtNome, 0);
             tabPageCadastro.Controls.SetChildIndex(cboEquipamento, 0);
-            // 
-            // tabPageConsulta
-            // 
-            tabPageConsulta.Size = new Size(621, 330);
             // 
             // txtId
             // 
@@ -255,7 +252,7 @@
             cboSexo.DropDownHeight = 174;
             cboSexo.DropDownStyle = ComboBoxStyle.DropDownList;
             cboSexo.DropDownWidth = 121;
-            cboSexo.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cboSexo.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             cboSexo.ForeColor = Color.FromArgb(222, 0, 0, 0);
             cboSexo.Hint = "Sexo";
             cboSexo.IntegralHeight = false;
@@ -460,6 +457,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(635, 432);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Location = new Point(0, 0);
             Name = "CadastroCachorro";
             Text = "Cadastro de Cachorros";

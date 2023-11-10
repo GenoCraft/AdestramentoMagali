@@ -106,7 +106,7 @@ namespace AdestramentoMagali.App.Cadastros
 
         protected override void CarregaGrid()
         {
-            cachorros = _cachorroService.Get<CachorroModel>(new[] { "Adestrador" , "Cliente" }).ToList();
+            cachorros = _cachorroService.Get<CachorroModel>(new[] { "Adestrador", "Cliente" }).ToList();
             dataGridViewConsulta.DataSource = cachorros;
             dataGridViewConsulta.Columns["IdAdestrador"]!.Visible = false;
             dataGridViewConsulta.Columns["IdCliente"]!.Visible = false;

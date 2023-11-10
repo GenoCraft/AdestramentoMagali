@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroCidade));
             txtNome = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             cboEstado = new ReaLTaiizor.Controls.MaterialComboBox();
@@ -141,6 +142,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(635, 241);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Location = new Point(0, 0);
             Name = "CadastroCidade";
             Text = "Cadastro de Cidades";

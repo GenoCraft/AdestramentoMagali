@@ -81,7 +81,7 @@ namespace AdestramentoMagali.App.Cadastros
         {
             txtId.Text = linha?.Cells["Id"].Value.ToString();
             txtNome.Text = linha?.Cells["Nome"].Value.ToString();
-            txtQuantidade.Text = linha?.Cells["Indicacao"].Value.ToString();
+            txtQuantidade.Text = linha?.Cells["Quantidade"].Value.ToString();
             txtIndicacao.Text = linha?.Cells["Indicacao"].Value.ToString();
             txtDescricao.Text = linha?.Cells["Descricao"].Value.ToString();
         }

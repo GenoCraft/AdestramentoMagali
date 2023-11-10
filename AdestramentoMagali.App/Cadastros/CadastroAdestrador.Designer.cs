@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroAdestrador));
             txtSenha = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtNome = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtTelefone = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
@@ -304,6 +305,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(635, 399);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Location = new Point(0, 0);
             Name = "CadastroAdestrador";
             Text = "Cadastro de Adestradores";
