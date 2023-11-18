@@ -23,7 +23,7 @@ namespace AdestramentoMagali.Service.Validators
             RuleFor(c => c.Cliente)
                 .NotEmpty().WithMessage("Por favor informe o cliente responsável.")
                 .NotNull().WithMessage("Por favor informe o cliente responsável.");
-            RuleFor(c => c.Adestrador)
+            RuleFor(c => c.Funcionario)
                 .NotEmpty().WithMessage("Por favor informe o adestrador responsável.")
                 .NotNull().WithMessage("Por favor informe o adestrador responsável.");
         }

@@ -36,9 +36,7 @@ namespace AdestramentoMagali.App.Base
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            LimpaCampos();
-            materialTabControl.SelectedIndex = 0;
-            tabPageCadastro.Focus();
+            Novo();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -104,6 +102,13 @@ namespace AdestramentoMagali.App.Base
         protected virtual void Salvar()
         {
 
+        }
+
+        protected virtual void Novo()
+        {
+            LimpaCampos();
+            materialTabControl.SelectedIndex = 0;
+            tabPageCadastro.Focus();
         }
 
         protected virtual void Editar()

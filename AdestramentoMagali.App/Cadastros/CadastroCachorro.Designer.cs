@@ -32,7 +32,7 @@
             txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             cboEquipamento = new ReaLTaiizor.Controls.MaterialComboBox();
             cboCliente = new ReaLTaiizor.Controls.MaterialComboBox();
-            cboAdestrador = new ReaLTaiizor.Controls.MaterialComboBox();
+            cboFuncionario = new ReaLTaiizor.Controls.MaterialComboBox();
             txtNome = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtIdade = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             cboSexo = new ReaLTaiizor.Controls.MaterialComboBox();
@@ -42,17 +42,24 @@
             txtTemperamento = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtTipoAdestramento = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtPlano = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            materialButton1 = new ReaLTaiizor.Controls.MaterialButton();
+            dataGridViewEquip = new DataGridView();
+            btnAdicionar = new ReaLTaiizor.Controls.MaterialButton();
             materialTabControl.SuspendLayout();
             tabPageCadastro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewEquip).BeginInit();
             SuspendLayout();
             // 
             // materialTabControl
             // 
-            materialTabControl.Size = new Size(629, 365);
+            materialTabControl.Size = new Size(629, 448);
             materialTabControl.TabIndex = 0;
             // 
             // tabPageCadastro
             // 
+            tabPageCadastro.Controls.Add(btnAdicionar);
+            tabPageCadastro.Controls.Add(dataGridViewEquip);
+            tabPageCadastro.Controls.Add(materialButton1);
             tabPageCadastro.Controls.Add(cboEquipamento);
             tabPageCadastro.Controls.Add(txtNome);
             tabPageCadastro.Controls.Add(txtIdade);
@@ -63,13 +70,13 @@
             tabPageCadastro.Controls.Add(txtTemperamento);
             tabPageCadastro.Controls.Add(txtTipoAdestramento);
             tabPageCadastro.Controls.Add(txtPlano);
-            tabPageCadastro.Controls.Add(cboAdestrador);
+            tabPageCadastro.Controls.Add(cboFuncionario);
             tabPageCadastro.Controls.Add(cboCliente);
             tabPageCadastro.Controls.Add(txtId);
-            tabPageCadastro.Size = new Size(621, 330);
+            tabPageCadastro.Size = new Size(621, 413);
             tabPageCadastro.Controls.SetChildIndex(txtId, 0);
             tabPageCadastro.Controls.SetChildIndex(cboCliente, 0);
-            tabPageCadastro.Controls.SetChildIndex(cboAdestrador, 0);
+            tabPageCadastro.Controls.SetChildIndex(cboFuncionario, 0);
             tabPageCadastro.Controls.SetChildIndex(txtPlano, 0);
             tabPageCadastro.Controls.SetChildIndex(txtTipoAdestramento, 0);
             tabPageCadastro.Controls.SetChildIndex(txtTemperamento, 0);
@@ -80,6 +87,9 @@
             tabPageCadastro.Controls.SetChildIndex(txtIdade, 0);
             tabPageCadastro.Controls.SetChildIndex(txtNome, 0);
             tabPageCadastro.Controls.SetChildIndex(cboEquipamento, 0);
+            tabPageCadastro.Controls.SetChildIndex(materialButton1, 0);
+            tabPageCadastro.Controls.SetChildIndex(dataGridViewEquip, 0);
+            tabPageCadastro.Controls.SetChildIndex(btnAdicionar, 0);
             // 
             // txtId
             // 
@@ -127,11 +137,11 @@
             cboEquipamento.Hint = "Equipamentos";
             cboEquipamento.IntegralHeight = false;
             cboEquipamento.ItemHeight = 43;
-            cboEquipamento.Location = new Point(377, 222);
+            cboEquipamento.Location = new Point(303, 222);
             cboEquipamento.MaxDropDownItems = 4;
             cboEquipamento.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboEquipamento.Name = "cboEquipamento";
-            cboEquipamento.Size = new Size(234, 49);
+            cboEquipamento.Size = new Size(237, 49);
             cboEquipamento.StartIndex = 0;
             cboEquipamento.TabIndex = 11;
             // 
@@ -158,28 +168,28 @@
             cboCliente.StartIndex = 0;
             cboCliente.TabIndex = 9;
             // 
-            // cboAdestrador
+            // cboFuncionario
             // 
-            cboAdestrador.AutoResize = false;
-            cboAdestrador.BackColor = Color.FromArgb(255, 255, 255);
-            cboAdestrador.Depth = 0;
-            cboAdestrador.DrawMode = DrawMode.OwnerDrawVariable;
-            cboAdestrador.DropDownHeight = 174;
-            cboAdestrador.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboAdestrador.DropDownWidth = 121;
-            cboAdestrador.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            cboAdestrador.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            cboAdestrador.FormattingEnabled = true;
-            cboAdestrador.Hint = "Adestrador responsável";
-            cboAdestrador.IntegralHeight = false;
-            cboAdestrador.ItemHeight = 43;
-            cboAdestrador.Location = new Point(6, 168);
-            cboAdestrador.MaxDropDownItems = 4;
-            cboAdestrador.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            cboAdestrador.Name = "cboAdestrador";
-            cboAdestrador.Size = new Size(307, 49);
-            cboAdestrador.StartIndex = 0;
-            cboAdestrador.TabIndex = 8;
+            cboFuncionario.AutoResize = false;
+            cboFuncionario.BackColor = Color.FromArgb(255, 255, 255);
+            cboFuncionario.Depth = 0;
+            cboFuncionario.DrawMode = DrawMode.OwnerDrawVariable;
+            cboFuncionario.DropDownHeight = 174;
+            cboFuncionario.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboFuncionario.DropDownWidth = 121;
+            cboFuncionario.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cboFuncionario.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboFuncionario.FormattingEnabled = true;
+            cboFuncionario.Hint = "Adestrador responsável";
+            cboFuncionario.IntegralHeight = false;
+            cboFuncionario.ItemHeight = 43;
+            cboFuncionario.Location = new Point(6, 168);
+            cboFuncionario.MaxDropDownItems = 4;
+            cboFuncionario.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            cboFuncionario.Name = "cboFuncionario";
+            cboFuncionario.Size = new Size(307, 49);
+            cboFuncionario.StartIndex = 0;
+            cboFuncionario.TabIndex = 8;
             // 
             // txtNome
             // 
@@ -445,30 +455,84 @@
             txtPlano.SelectionLength = 0;
             txtPlano.SelectionStart = 0;
             txtPlano.ShortcutsEnabled = true;
-            txtPlano.Size = new Size(365, 48);
+            txtPlano.Size = new Size(291, 48);
             txtPlano.TabIndex = 10;
             txtPlano.TabStop = false;
             txtPlano.TextAlign = HorizontalAlignment.Left;
             txtPlano.TrailingIcon = null;
             txtPlano.UseSystemPasswordChar = false;
             // 
+            // materialButton1
+            // 
+            materialButton1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            materialButton1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            materialButton1.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            materialButton1.Depth = 0;
+            materialButton1.HighEmphasis = true;
+            materialButton1.Icon = null;
+            materialButton1.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            materialButton1.Location = new Point(1033, 218);
+            materialButton1.Margin = new Padding(4, 6, 4, 6);
+            materialButton1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialButton1.Name = "materialButton1";
+            materialButton1.NoAccentTextColor = Color.Empty;
+            materialButton1.Size = new Size(64, 36);
+            materialButton1.TabIndex = 12;
+            materialButton1.Text = "+";
+            materialButton1.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            materialButton1.UseAccentColor = false;
+            materialButton1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewEquip
+            // 
+            dataGridViewEquip.AccessibleDescription = "";
+            dataGridViewEquip.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewEquip.Location = new Point(6, 277);
+            dataGridViewEquip.Name = "dataGridViewEquip";
+            dataGridViewEquip.RowTemplate.Height = 25;
+            dataGridViewEquip.Size = new Size(605, 79);
+            dataGridViewEquip.TabIndex = 13;
+            // 
+            // btnAdicionar
+            // 
+            btnAdicionar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnAdicionar.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnAdicionar.Depth = 0;
+            btnAdicionar.HighEmphasis = true;
+            btnAdicionar.Icon = null;
+            btnAdicionar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            btnAdicionar.Location = new Point(547, 226);
+            btnAdicionar.Margin = new Padding(4, 6, 4, 6);
+            btnAdicionar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            btnAdicionar.Name = "btnAdicionar";
+            btnAdicionar.NoAccentTextColor = Color.Empty;
+            btnAdicionar.Size = new Size(64, 36);
+            btnAdicionar.TabIndex = 14;
+            btnAdicionar.Text = "+";
+            btnAdicionar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnAdicionar.UseAccentColor = false;
+            btnAdicionar.UseVisualStyleBackColor = true;
+            btnAdicionar.Click += btnAdicionar_Click;
+            // 
             // CadastroCachorro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(635, 432);
+            ClientSize = new Size(635, 515);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Location = new Point(0, 0);
             Name = "CadastroCachorro";
             Text = "Cadastro de Cachorros";
             materialTabControl.ResumeLayout(false);
             tabPageCadastro.ResumeLayout(false);
+            tabPageCadastro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewEquip).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtId;
-        private ReaLTaiizor.Controls.MaterialComboBox cboAdestrador;
+        private ReaLTaiizor.Controls.MaterialComboBox cboFuncionario;
         private ReaLTaiizor.Controls.MaterialComboBox cboCliente;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtNome;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtIdade;
@@ -480,5 +544,8 @@
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtTipoAdestramento;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtPlano;
         private ReaLTaiizor.Controls.MaterialComboBox cboEquipamento;
+        private ReaLTaiizor.Controls.MaterialButton materialButton1;
+        private DataGridView dataGridViewEquip;
+        private ReaLTaiizor.Controls.MaterialButton btnAdicionar;
     }
 }

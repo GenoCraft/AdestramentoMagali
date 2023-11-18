@@ -3,34 +3,45 @@ using AdestramentoMagali.App.Models;
 using AdestramentoMagali.Domain.Base;
 using AdestramentoMagali.Domain.Entities;
 using AdestramentoMagali.Service.Validators;
+using System.Globalization;
 
 namespace AdestramentoMagali.App.Cadastros
 {
     public partial class CadastroCachorro : CadastroBase
     {
+        private List<EquipamentoModel> _equipamentos;
         private readonly IBaseService<Cachorro> _cachorroService;
-        private readonly IBaseService<Adestrador> _adestradorService;
+        private readonly IBaseService<Funcionario> _funcionarioService;
         private readonly IBaseService<Cliente> _clienteService;
+        private readonly IBaseService<Equipamento> _equipamentoService;
 
         private List<CachorroModel>? cachorros;
 
-        public CadastroCachorro(IBaseService<Cachorro> cachorroService, IBaseService<Adestrador> adestradorService, IBaseService<Cliente> clienteService)
+        public CadastroCachorro(IBaseService<Cachorro> cachorroService, IBaseService<Funcionario> funcionarioService, IBaseService<Cliente> clienteService, IBaseService<Equipamento> equipamentoService)
         {
             _cachorroService = cachorroService;
-            _adestradorService = adestradorService;
+            _funcionarioService = funcionarioService;
             _clienteService = clienteService;
+            _equipamentoService = equipamentoService;
+            _equipamentos = new List<EquipamentoModel>();
             InitializeComponent();
             CarregarCombo();
+            CarregaGridEquipamentos();
         }
 
         private void CarregarCombo()
         {
-            cboAdestrador.ValueMember = "Id";
-            cboAdestrador.DisplayMember = "Nome";
-            cboAdestrador.DataSource = _adestradorService.Get<Adestrador>().ToList();
+            cboFuncionario.ValueMember = "Id";
+            cboFuncionario.DisplayMember = "Nome";
+            cboFuncionario.DataSource = _funcionarioService.Get<Funcionario>().ToList();
+
             cboCliente.ValueMember = "Id";
             cboCliente.DisplayMember = "Nome";
             cboCliente.DataSource = _clienteService.Get<Cliente>().ToList();
+
+            cboEquipamento.ValueMember = "Id";
+            cboEquipamento.DisplayMember = "Nome";
+            cboEquipamento.DataSource = _equipamentoService.Get<Equipamento>().ToList();
         }
 
         private void PreencheObjeto(Cachorro cachorro)
@@ -51,16 +62,38 @@ namespace AdestramentoMagali.App.Cadastros
             cachorro.TipoAdestramento = txtTipoAdestramento.Text;
             cachorro.Plano = txtPlano.Text;
 
-            if (int.TryParse(cboAdestrador.SelectedValue.ToString(), out var idAdestrador))
+            if (int.TryParse(cboFuncionario.SelectedValue.ToString(), out var idFuncionario))
             {
-                var adestrador = _adestradorService.GetById<Adestrador>(idAdestrador);
-                cachorro.Adestrador = adestrador;
+                var funcionario = _funcionarioService.GetById<Funcionario>(idFuncionario);
+                cachorro.Funcionario = funcionario;
             }
             if (int.TryParse(cboCliente.SelectedValue.ToString(), out var idCliente))
             {
                 var cliente = _clienteService.GetById<Cliente>(idCliente);
                 cachorro.Cliente = cliente;
             }
+
+            foreach (var equipamentos in _equipamentos)
+            {
+                var equipamento = new Equipamento
+                {
+                    Id = equipamentos.Id,
+                    Nome = equipamentos.Nome,
+                    Indicacao = equipamentos.Indicacao,
+                    Quantidade = equipamentos.Quantidade
+                };
+
+                cachorro.Equipamentos.Add(equipamento);
+            }
+        }
+
+        protected override void Novo()
+        {
+            LimpaCampos();
+            _equipamentos.Clear();
+            CarregaGridEquipamentos();
+            materialTabControl.SelectedIndex = 0;
+            tabPageCadastro.Focus();
         }
 
         protected override void Salvar()
@@ -106,9 +139,9 @@ namespace AdestramentoMagali.App.Cadastros
 
         protected override void CarregaGrid()
         {
-            cachorros = _cachorroService.Get<CachorroModel>(new[] { "Adestrador", "Cliente" }).ToList();
+            cachorros = _cachorroService.Get<CachorroModel>(new[] { "Funcionario", "Cliente" }).ToList();
             dataGridViewConsulta.DataSource = cachorros;
-            dataGridViewConsulta.Columns["IdAdestrador"]!.Visible = false;
+            dataGridViewConsulta.Columns["IdFuncionario"]!.Visible = false;
             dataGridViewConsulta.Columns["IdCliente"]!.Visible = false;
         }
 
@@ -124,9 +157,41 @@ namespace AdestramentoMagali.App.Cadastros
             txtTemperamento.Text = linha?.Cells["Temperamento"].Value.ToString();
             txtTipoAdestramento.Text = linha?.Cells["TipoAdestramento"].Value.ToString();
             txtPlano.Text = linha?.Cells["Plano"].Value.ToString();
-            cboAdestrador.SelectedValue = linha?.Cells["IdAdestrador"].Value;
+            cboFuncionario.SelectedValue = linha?.Cells["IdFuncionario"].Value;
             cboCliente.SelectedValue = linha?.Cells["IdCliente"].Value;
         }
 
+        private void CarregaGridEquipamentos()
+        {
+            var source = new BindingSource();
+            if (_equipamentos == null)
+            {
+                _equipamentos = new List<EquipamentoModel>();
+            }
+            source.DataSource = _equipamentos.ToArray();
+            dataGridViewEquip.DataSource = source;
+            dataGridViewEquip.Columns["Id"].Visible = false;
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            if (ValidaEquip())
+            {
+                var equipamento = new EquipamentoModel();
+
+                if (int.TryParse(cboEquipamento.SelectedValue.ToString(), out var idEquipamento))
+                {
+                    equipamento = _equipamentoService.GetById<EquipamentoModel>(idEquipamento);
+                }
+
+                _equipamentos.Add(equipamento);
+                CarregaGridEquipamentos();
+            }
+        }
+
+        private bool ValidaEquip()
+        {
+            return true;
+        }
     }
 }

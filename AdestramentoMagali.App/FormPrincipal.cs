@@ -21,9 +21,9 @@ namespace AdestramentoMagali.App
             }
         }
 
-        private void adestradoresToolStripMenuItem_Click(object sender, EventArgs e)
+        private void funcionariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Exibeformulario<CadastroAdestrador>();
+            Exibeformulario<CadastroFuncionario>();
         }
 
         private void equipamentosToolStripMenuItem_Click(object sender, EventArgs e)

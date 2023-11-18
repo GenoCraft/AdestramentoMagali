@@ -48,7 +48,7 @@ namespace AdestramentoMagali.Repository.Mapping
                 .IsRequired()
                 .HasColumnType("varchar(100)");
 
-            builder.HasOne(prop => prop.Adestrador);
+            builder.HasOne(prop => prop.Funcionario);
 
             builder.HasOne(prop => prop.Cliente);
 

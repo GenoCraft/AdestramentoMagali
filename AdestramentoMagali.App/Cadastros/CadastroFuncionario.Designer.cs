@@ -1,6 +1,6 @@
 ﻿namespace AdestramentoMagali.App.Cadastros
 {
-    partial class CadastroAdestrador
+    partial class CadastroFuncionario
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroAdestrador));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroFuncionario));
             txtSenha = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtNome = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtTelefone = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
@@ -169,7 +169,7 @@
             txtEspecialidade.Depth = 0;
             txtEspecialidade.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtEspecialidade.HideSelection = true;
-            txtEspecialidade.Hint = "Especialidade";
+            txtEspecialidade.Hint = "Especialidade de adestramento";
             txtEspecialidade.LeadingIcon = null;
             txtEspecialidade.Location = new Point(236, 114);
             txtEspecialidade.MaxLength = 32767;
@@ -300,15 +300,15 @@
             chkAtivo.UseAccentColor = false;
             chkAtivo.UseVisualStyleBackColor = true;
             // 
-            // CadastroAdestrador
+            // CadastroFuncionario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(635, 399);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Location = new Point(0, 0);
-            Name = "CadastroAdestrador";
-            Text = "Cadastro de Adestradores";
+            Name = "CadastroFuncionario";
+            Text = "Cadastro de Funcionários";
             materialTabControl.ResumeLayout(false);
             tabPageCadastro.ResumeLayout(false);
             tabPageCadastro.PerformLayout();

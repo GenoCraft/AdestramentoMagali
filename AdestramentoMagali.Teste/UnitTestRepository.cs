@@ -10,7 +10,7 @@ namespace AdestramentoMagali.Teste
     {
         public partial class MyDbContext : DbContext
         {
-            public DbSet<Adestrador> Adestrador { get; set; }
+            public DbSet<Funcionario> Funcionario { get; set; }
             public DbSet<Cidade> Cidade { get; set; }
             public DbSet<Cliente> Cliente { get; set; }
             public DbSet<Equipamento> Equipamento { get; set; }
@@ -43,12 +43,12 @@ namespace AdestramentoMagali.Teste
         }
         
         [TestMethod]
-        public void TestInsertAdestradores()
+        public void TestInsertFuncionarios()
         {
             using (var context = new MyDbContext())
             {
 
-                var adestrador = new Adestrador
+                var funcionario = new Funcionario
                 {
                     Nome = "Murilo",
                     Email = "murilo@mail.com",
@@ -57,9 +57,9 @@ namespace AdestramentoMagali.Teste
                     Especialidade = "Guarda",
                     DataCadastro = DateTime.Now
                 };
-                context.Adestrador.Add(adestrador);
+                context.Funcionario.Add(funcionario);
                 
-                adestrador = new Adestrador
+                funcionario = new Funcionario
                 {
                     Nome = "João",
                     Email = "joao@mail.com",
@@ -68,20 +68,20 @@ namespace AdestramentoMagali.Teste
                     Especialidade = "Agility",
                     DataCadastro = DateTime.Now
                 };
-                context.Adestrador.Add(adestrador);
+                context.Funcionario.Add(funcionario);
 
                 context.SaveChanges();
             }
         }
 
         [TestMethod]
-        public void TestListarAdestradores()
+        public void TestListarFuncionarios()
         {
             using (var context = new MyDbContext())
             {
-                foreach (var adestrador in context.Adestrador)
+                foreach (var funcionario in context.Funcionario)
                 {
-                    Console.WriteLine(JsonSerializer.Serialize(adestrador));
+                    Console.WriteLine(JsonSerializer.Serialize(funcionario));
                 }
             }
         }

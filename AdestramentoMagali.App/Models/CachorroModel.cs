@@ -12,9 +12,10 @@
         public string? Temperamento { get; set; }
         public string? TipoAdestramento { get; set; }
         public string? Plano { get; set; }
-        public int IdAdestrador { get; set; }
-        public string Adestrador { get; set; }
+        public int IdFuncionario { get; set; }
+        public string Funcionario { get; set; }
         public int IdCliente { get; set; }
         public string Cliente { get; set; }
+        public List<EquipamentoModel> Equipamentos { get; set; }
     }
 }

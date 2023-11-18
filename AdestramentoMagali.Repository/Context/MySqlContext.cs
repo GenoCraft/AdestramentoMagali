@@ -13,7 +13,7 @@ namespace AdestramentoMagali.Repository.Context
             ChangeTracker.LazyLoadingEnabled = false;
         }
 
-        public DbSet<Adestrador>? Adestrador { get; set; }
+        public DbSet<Funcionario>? Funcionario { get; set; }
         public DbSet<Cidade>? Cidade { get; set; }
         public DbSet<Cliente>? Cliente { get; set; }
         public DbSet<Equipamento>? Equipamento { get; set; }
@@ -23,7 +23,7 @@ namespace AdestramentoMagali.Repository.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Adestrador>(new AdestradorMap().Configure);            
+            modelBuilder.Entity<Funcionario>(new FuncionarioMap().Configure);            
             modelBuilder.Entity<Cidade>(new CidadeMap().Configure);
             modelBuilder.Entity<Cliente>(new ClienteMap().Configure);
             modelBuilder.Entity<Equipamento>(new EquipamentoMap().Configure);

@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             menuStrip1 = new MenuStrip();
             cadastrosToolStripMenuItem = new ToolStripMenuItem();
-            adestradoresToolStripMenuItem = new ToolStripMenuItem();
+            funcionariosToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripSeparator();
             equipamentosToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem2 = new ToolStripSeparator();
@@ -54,58 +54,58 @@
             // 
             // cadastrosToolStripMenuItem
             // 
-            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { adestradoresToolStripMenuItem, toolStripMenuItem1, equipamentosToolStripMenuItem, toolStripMenuItem2, cidadesToolStripMenuItem, clientesToolStripMenuItem, toolStripMenuItem3, cachorrosToolStripMenuItem });
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { funcionariosToolStripMenuItem, toolStripMenuItem1, equipamentosToolStripMenuItem, toolStripMenuItem2, cidadesToolStripMenuItem, clientesToolStripMenuItem, toolStripMenuItem3, cachorrosToolStripMenuItem });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             cadastrosToolStripMenuItem.Size = new Size(71, 20);
             cadastrosToolStripMenuItem.Text = "&Cadastros";
             // 
-            // adestradoresToolStripMenuItem
+            // funcionariosToolStripMenuItem
             // 
-            adestradoresToolStripMenuItem.Name = "adestradoresToolStripMenuItem";
-            adestradoresToolStripMenuItem.Size = new Size(150, 22);
-            adestradoresToolStripMenuItem.Text = "&Adestradores";
-            adestradoresToolStripMenuItem.Click += adestradoresToolStripMenuItem_Click;
+            funcionariosToolStripMenuItem.Name = "funcionariosToolStripMenuItem";
+            funcionariosToolStripMenuItem.Size = new Size(180, 22);
+            funcionariosToolStripMenuItem.Text = "&Funcionários";
+            funcionariosToolStripMenuItem.Click += funcionariosToolStripMenuItem_Click;
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(147, 6);
+            toolStripMenuItem1.Size = new Size(177, 6);
             // 
             // equipamentosToolStripMenuItem
             // 
             equipamentosToolStripMenuItem.Name = "equipamentosToolStripMenuItem";
-            equipamentosToolStripMenuItem.Size = new Size(150, 22);
+            equipamentosToolStripMenuItem.Size = new Size(180, 22);
             equipamentosToolStripMenuItem.Text = "&Equipamentos";
             equipamentosToolStripMenuItem.Click += equipamentosToolStripMenuItem_Click;
             // 
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(147, 6);
+            toolStripMenuItem2.Size = new Size(177, 6);
             // 
             // cidadesToolStripMenuItem
             // 
             cidadesToolStripMenuItem.Name = "cidadesToolStripMenuItem";
-            cidadesToolStripMenuItem.Size = new Size(150, 22);
+            cidadesToolStripMenuItem.Size = new Size(180, 22);
             cidadesToolStripMenuItem.Text = "&Cidades";
             cidadesToolStripMenuItem.Click += cidadesToolStripMenuItem_Click;
             // 
             // clientesToolStripMenuItem
             // 
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(150, 22);
+            clientesToolStripMenuItem.Size = new Size(180, 22);
             clientesToolStripMenuItem.Text = "&Clientes";
             clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
             // 
             // toolStripMenuItem3
             // 
             toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(147, 6);
+            toolStripMenuItem3.Size = new Size(177, 6);
             // 
             // cachorrosToolStripMenuItem
             // 
             cachorrosToolStripMenuItem.Name = "cachorrosToolStripMenuItem";
-            cachorrosToolStripMenuItem.Size = new Size(150, 22);
+            cachorrosToolStripMenuItem.Size = new Size(180, 22);
             cachorrosToolStripMenuItem.Text = "&Cachorros";
             cachorrosToolStripMenuItem.Click += cachorrosToolStripMenuItem_Click;
             // 
@@ -139,7 +139,7 @@
 
         private MenuStrip menuStrip1;
         private ToolStripMenuItem cadastrosToolStripMenuItem;
-        private ToolStripMenuItem adestradoresToolStripMenuItem;
+        private ToolStripMenuItem funcionariosToolStripMenuItem;
         private ToolStripSeparator toolStripMenuItem1;
         private ToolStripMenuItem equipamentosToolStripMenuItem;
         private ToolStripSeparator toolStripMenuItem2;

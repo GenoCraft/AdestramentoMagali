@@ -1,6 +1,6 @@
 ﻿namespace AdestramentoMagali.App.Models
 {
-    public class AdestradorModel
+    public class FuncionarioModel
     {
         public int Id { get; set; }
         public string? Nome { get; set; }

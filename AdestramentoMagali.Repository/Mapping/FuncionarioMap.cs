@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AdestramentoMagali.Repository.Mapping
 {
-    public class AdestradorMap : IEntityTypeConfiguration<Adestrador>
+    public class FuncionarioMap : IEntityTypeConfiguration<Funcionario>
     {
-        public void Configure(EntityTypeBuilder<Adestrador> builder)
+        public void Configure(EntityTypeBuilder<Funcionario> builder)
         {
-            builder.ToTable("Adestrador");
+            builder.ToTable("Funcionario");
 
             builder.HasKey(prop => prop.Id);
 

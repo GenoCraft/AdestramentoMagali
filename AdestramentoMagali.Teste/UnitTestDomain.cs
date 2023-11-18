@@ -61,22 +61,22 @@ namespace AdestramentoMagali.Teste
 
         }
         [TestMethod]
-        public void TesteAdestrador()
+        public void TesteFuncionario()
         {
-            var adestrador = new Adestrador();
-            adestrador.Email = "teste@gmail.com";
-            adestrador.Senha = "teste";
-            adestrador.Telefone = 12345678901;
-            adestrador.Especialidade = "Guarda";
-            adestrador.DataCadastro = DateTime.Today;
-            adestrador.Ativo = true;
+            var funcionario = new Funcionario();
+            funcionario.Email = "teste@gmail.com";
+            funcionario.Senha = "teste";
+            funcionario.Telefone = 12345678901;
+            funcionario.Especialidade = "Guarda";
+            funcionario.DataCadastro = DateTime.Today;
+            funcionario.Ativo = true;
 
-            Assert.AreEqual(adestrador.Email, "teste@gmail.com");
-            Assert.AreEqual(adestrador.Senha, "teste");
-            Assert.AreEqual(adestrador.Telefone, 12345678901);
-            Assert.AreEqual(adestrador.Especialidade, "Guarda");
-            Assert.AreEqual(adestrador.DataCadastro, DateTime.Today);
-            Assert.AreEqual(adestrador.Ativo, true);
+            Assert.AreEqual(funcionario.Email, "teste@gmail.com");
+            Assert.AreEqual(funcionario.Senha, "teste");
+            Assert.AreEqual(funcionario.Telefone, 12345678901);
+            Assert.AreEqual(funcionario.Especialidade, "Guarda");
+            Assert.AreEqual(funcionario.DataCadastro, DateTime.Today);
+            Assert.AreEqual(funcionario.Ativo, true);
         }
 
         [TestMethod]
@@ -88,7 +88,7 @@ namespace AdestramentoMagali.Teste
 
             var cidade = new Cidade();
             var cliente = new Cliente();
-            var adestrador = new Adestrador();
+            var funcionario = new Funcionario();
 
             cidade.Nome = "Batatais";
             cidade.Estado = "SP";
@@ -113,7 +113,7 @@ namespace AdestramentoMagali.Teste
             cachorro.TipoAdestramento = "Guarda";
             cachorro.Plano = "Semanal";
             cachorro.Cliente = cliente;
-            cachorro.Adestrador = adestrador;
+            cachorro.Funcionario = funcionario;
 
             Console.WriteLine(JsonSerializer.Serialize(cachorro));
             Assert.AreEqual(cachorro.Nome, "Naruto");
@@ -126,7 +126,7 @@ namespace AdestramentoMagali.Teste
             Assert.AreEqual(cachorro.TipoAdestramento, "Guarda");
             Assert.AreEqual(cachorro.Plano, "Semanal");
             Assert.AreEqual(cachorro.Cliente, cliente);
-            Assert.AreEqual(cachorro.Adestrador, adestrador);
+            Assert.AreEqual(cachorro.Funcionario, funcionario);
 
             cachorro.Equipamentos.Add(equipamento);
 

@@ -4,9 +4,9 @@ using AdestramentoMagali.Domain.Entities;
 
 namespace AdestramentoMagali.Service.Validators
 {
-    public class AdestradorValidator : AbstractValidator<Adestrador>
+    public class FuncionarioValidator : AbstractValidator<Funcionario>
     {
-        public AdestradorValidator()
+        public FuncionarioValidator()
         {
             RuleFor(c => c.Nome)
                 .NotEmpty().WithMessage("Por favor informe o nome.")

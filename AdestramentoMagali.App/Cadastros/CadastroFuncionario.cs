@@ -6,29 +6,29 @@ using AdestramentoMagali.Service.Validators;
 
 namespace AdestramentoMagali.App.Cadastros
 {
-    public partial class CadastroAdestrador : CadastroBase
+    public partial class CadastroFuncionario : CadastroBase
     {
-        private readonly IBaseService<Adestrador> _adestradorService;
+        private readonly IBaseService<Funcionario> _funcionarioService;
 
-        private List<AdestradorModel>? adestradores;
+        private List<FuncionarioModel>? funcionarios;
 
-        public CadastroAdestrador(IBaseService<Adestrador> adestradorService)
+        public CadastroFuncionario(IBaseService<Funcionario> funcionarioService)
         {
-            _adestradorService = adestradorService;
+            _funcionarioService = funcionarioService;
             InitializeComponent();
         }
 
-        private void PreencheObjeto(Adestrador adestrador)
+        private void PreencheObjeto(Funcionario funcionario)
         {
-            adestrador.Nome = txtNome.Text;
-            adestrador.Email = txtEmail.Text;
-            adestrador.Senha = txtSenha.Text;
+            funcionario.Nome = txtNome.Text;
+            funcionario.Email = txtEmail.Text;
+            funcionario.Senha = txtSenha.Text;
             if (long.TryParse(txtTelefone.Text, out var telefone))
             {
-                adestrador.Telefone = telefone;
+                funcionario.Telefone = telefone;
             }
-            adestrador.Especialidade = txtEspecialidade.Text;
-            adestrador.Ativo = chkAtivo.Checked;
+            funcionario.Especialidade = txtEspecialidade.Text;
+            funcionario.Ativo = chkAtivo.Checked;
         }
 
         protected override void Salvar()
@@ -39,16 +39,16 @@ namespace AdestramentoMagali.App.Cadastros
                 {
                     if (int.TryParse(txtId.Text, out var id))
                     {
-                        var adestrador = _adestradorService.GetById<Adestrador>(id);
-                        PreencheObjeto(adestrador);
-                        adestrador = _adestradorService.Update<Adestrador, Adestrador, AdestradorValidator>(adestrador);
+                        var funcionario = _funcionarioService.GetById<Funcionario>(id);
+                        PreencheObjeto(funcionario);
+                        funcionario = _funcionarioService.Update<Funcionario, Funcionario, FuncionarioValidator>(funcionario);
                     }
                 }
                 else
                 {
-                    var adestrador = new Adestrador();
-                    PreencheObjeto(adestrador);
-                    _adestradorService.Add<Adestrador, Adestrador, AdestradorValidator>(adestrador);
+                    var funcionario = new Funcionario();
+                    PreencheObjeto(funcionario);
+                    _funcionarioService.Add<Funcionario, Funcionario, FuncionarioValidator>(funcionario);
 
                 }
 
@@ -64,7 +64,7 @@ namespace AdestramentoMagali.App.Cadastros
         {
             try
             {
-                _adestradorService.Delete(id);
+                _funcionarioService.Delete(id);
             }
             catch (Exception ex)
             {
@@ -74,8 +74,8 @@ namespace AdestramentoMagali.App.Cadastros
 
         protected override void CarregaGrid()
         {
-            adestradores = _adestradorService.Get<AdestradorModel>().ToList();
-            dataGridViewConsulta.DataSource = adestradores;
+            funcionarios = _funcionarioService.Get<FuncionarioModel>().ToList();
+            dataGridViewConsulta.DataSource = funcionarios;
             dataGridViewConsulta.Columns["Senha"]!.Visible = false;
             dataGridViewConsulta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }

@@ -9,7 +9,7 @@ namespace AdestramentoMagali.Domain.Entities
             Equipamentos = new List<Equipamento>();
         }
         
-        public Cachorro(int id, string? nome, string sexo, int? idade, string? raca, string? porte, float? peso, string? temperamento, string? tipoAdestramento, string? plano, Adestrador? adestrador, Cliente? cliente, List<Equipamento> equipamentos) : base(id)
+        public Cachorro(int id, string? nome, string sexo, int? idade, string? raca, string? porte, float? peso, string? temperamento, string? tipoAdestramento, string? plano, Funcionario? funcionario, Cliente? cliente, List<Equipamento> equipamentos) : base(id)
         {
             Nome = nome;
             Idade = idade;
@@ -20,7 +20,7 @@ namespace AdestramentoMagali.Domain.Entities
             Temperamento = temperamento;
             TipoAdestramento = tipoAdestramento;
             Plano = plano;
-            Adestrador = adestrador;
+            Funcionario = funcionario;
             Cliente = cliente;
             Equipamentos = equipamentos;
         }
@@ -34,7 +34,7 @@ namespace AdestramentoMagali.Domain.Entities
         public string? Temperamento { get; set; }
         public string? TipoAdestramento { get; set; }
         public string? Plano { get; set; }
-        public Adestrador? Adestrador { get; set; }
+        public Funcionario? Funcionario { get; set; }
         public Cliente? Cliente { get; set; }
         public List<Equipamento> Equipamentos { get; set; }
     }
