@@ -99,16 +99,16 @@ namespace AdestramentoMagali.App.Base
 
         }
 
-        protected virtual void Salvar()
-        {
-
-        }
-
         protected virtual void Novo()
         {
             LimpaCampos();
             materialTabControl.SelectedIndex = 0;
             tabPageCadastro.Focus();
+        }
+
+        protected virtual void Salvar()
+        {
+
         }
 
         protected virtual void Editar()

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using AdestramentoMagali.App.Cadastros;
 using AdestramentoMagali.App.Models;
+using AdestramentoMagali.App.Outros;
 using AdestramentoMagali.Domain.Base;
 using AdestramentoMagali.Domain.Entities;
 using AdestramentoMagali.Repository.Context;
@@ -24,13 +25,7 @@ namespace AdestramentoMagali.App.Infra
             Services = new ServiceCollection();
             Services.AddDbContext<MySqlContext>(options =>
             {
-                const string server = "localhost";
-                const string port = "3306";
-                const string database = "AdestramentoMagali";
-                const string username = "root";
-                const string password = "1122";
-                const string strCon = $"Server={server};Port={port};Database={database};Uid={username};Pwd={password}";
-
+                var strCon = File.ReadAllText("Config/DatabaseSettings.txt");
                 options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
                 options.EnableSensitiveDataLogging();
 
@@ -42,6 +37,7 @@ namespace AdestramentoMagali.App.Infra
 
                 });
             });
+
 
             // Repositories
             Services.AddScoped<IBaseRepository<Funcionario>, BaseRepository<Funcionario>>();
@@ -58,6 +54,7 @@ namespace AdestramentoMagali.App.Infra
             Services.AddScoped<IBaseService<Cachorro>, BaseService<Cachorro>>();
 
             // Formulários
+            Services.AddTransient<Login, Login>();
             Services.AddTransient<CadastroFuncionario, CadastroFuncionario>();
             Services.AddTransient<CadastroEquipamento, CadastroEquipamento>();
             Services.AddTransient<CadastroCidade, CadastroCidade>();
