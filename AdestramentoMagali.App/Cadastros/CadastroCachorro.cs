@@ -80,6 +80,7 @@ namespace AdestramentoMagali.App.Cadastros
                     Id = equipamentos.Id,
                     Nome = equipamentos.Nome,
                     Indicacao = equipamentos.Indicacao,
+                    Descricao = equipamentos.Descricao,
                     Quantidade = equipamentos.Quantidade
                 };
 
@@ -171,6 +172,7 @@ namespace AdestramentoMagali.App.Cadastros
             source.DataSource = _equipamentos.ToArray();
             dataGridViewEquip.DataSource = source;
             dataGridViewEquip.Columns["Id"].Visible = false;
+            dataGridViewEquip.Columns["Descricao"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
