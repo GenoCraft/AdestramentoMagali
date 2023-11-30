@@ -16,6 +16,13 @@
         public string Funcionario { get; set; }
         public int IdCliente { get; set; }
         public string Cliente { get; set; }
-        public List<EquipamentoModel> Equipamentos { get; set; }
+        public List<CachorroEquipModel> Equipamentos { get; set; }
+    }
+
+    public class CachorroEquipModel
+    {
+        public int Id { get; set; }
+        public int IdEquipamento { get; set; }
+        public string? Equipamento { get; set; }
     }
 }

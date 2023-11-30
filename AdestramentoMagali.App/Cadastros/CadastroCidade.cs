@@ -1,4 +1,5 @@
 ﻿using AdestramentoMagali.App.Base;
+using AdestramentoMagali.App.Models;
 using AdestramentoMagali.Domain.Base;
 using AdestramentoMagali.Domain.Entities;
 using AdestramentoMagali.Service.Validators;
@@ -9,7 +10,7 @@ namespace AdestramentoMagali.App.Cadastros
     {
         private readonly IBaseService<Cidade> _cidadeService;
 
-        private List<Cidade>? cidades;
+        private List<CidadeModel>? cidades;
 
         public CadastroCidade(IBaseService<Cidade> cidadeService)
         {
@@ -67,7 +68,7 @@ namespace AdestramentoMagali.App.Cadastros
 
         protected override void CarregaGrid()
         {
-            cidades = _cidadeService.Get<Cidade>().ToList();
+            cidades = _cidadeService.Get<CidadeModel>().ToList();
             dataGridViewConsulta.DataSource = cidades;
             dataGridViewConsulta.Columns["Nome"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }

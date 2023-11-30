@@ -52,7 +52,7 @@
             // 
             // materialTabControl
             // 
-            this.materialTabControl.Size = new System.Drawing.Size(629, 448);
+            this.materialTabControl.Size = new System.Drawing.Size(629, 418);
             this.materialTabControl.TabIndex = 0;
             // 
             // tabPageCadastro
@@ -73,7 +73,7 @@
             this.tabPageCadastro.Controls.Add(this.cboFuncionario);
             this.tabPageCadastro.Controls.Add(this.cboCliente);
             this.tabPageCadastro.Controls.Add(this.txtId);
-            this.tabPageCadastro.Size = new System.Drawing.Size(621, 413);
+            this.tabPageCadastro.Size = new System.Drawing.Size(621, 383);
             this.tabPageCadastro.Controls.SetChildIndex(this.txtId, 0);
             this.tabPageCadastro.Controls.SetChildIndex(this.cboCliente, 0);
             this.tabPageCadastro.Controls.SetChildIndex(this.cboFuncionario, 0);
@@ -137,11 +137,11 @@
             this.cboEquipamento.Hint = "Equipamentos";
             this.cboEquipamento.IntegralHeight = false;
             this.cboEquipamento.ItemHeight = 43;
-            this.cboEquipamento.Location = new System.Drawing.Point(303, 222);
+            this.cboEquipamento.Location = new System.Drawing.Point(6, 222);
             this.cboEquipamento.MaxDropDownItems = 4;
             this.cboEquipamento.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             this.cboEquipamento.Name = "cboEquipamento";
-            this.cboEquipamento.Size = new System.Drawing.Size(237, 49);
+            this.cboEquipamento.Size = new System.Drawing.Size(266, 49);
             this.cboEquipamento.StartIndex = 0;
             this.cboEquipamento.TabIndex = 11;
             // 
@@ -445,7 +445,7 @@
             this.txtPlano.HideSelection = true;
             this.txtPlano.Hint = "Plano";
             this.txtPlano.LeadingIcon = null;
-            this.txtPlano.Location = new System.Drawing.Point(6, 223);
+            this.txtPlano.Location = new System.Drawing.Point(6, 277);
             this.txtPlano.MaxLength = 32767;
             this.txtPlano.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             this.txtPlano.Name = "txtPlano";
@@ -457,7 +457,7 @@
             this.txtPlano.SelectionLength = 0;
             this.txtPlano.SelectionStart = 0;
             this.txtPlano.ShortcutsEnabled = true;
-            this.txtPlano.Size = new System.Drawing.Size(291, 48);
+            this.txtPlano.Size = new System.Drawing.Size(337, 48);
             this.txtPlano.TabIndex = 10;
             this.txtPlano.TabStop = false;
             this.txtPlano.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -473,7 +473,7 @@
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
             this.materialButton1.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.materialButton1.Location = new System.Drawing.Point(1114, 215);
+            this.materialButton1.Location = new System.Drawing.Point(1357, 264);
             this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
@@ -489,10 +489,10 @@
             // 
             this.dataGridViewEquip.AccessibleDescription = "";
             this.dataGridViewEquip.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEquip.Location = new System.Drawing.Point(6, 277);
+            this.dataGridViewEquip.Location = new System.Drawing.Point(349, 222);
             this.dataGridViewEquip.Name = "dataGridViewEquip";
             this.dataGridViewEquip.RowTemplate.Height = 25;
-            this.dataGridViewEquip.Size = new System.Drawing.Size(605, 79);
+            this.dataGridViewEquip.Size = new System.Drawing.Size(262, 103);
             this.dataGridViewEquip.TabIndex = 13;
             // 
             // btnAdicionar
@@ -503,7 +503,7 @@
             this.btnAdicionar.HighEmphasis = true;
             this.btnAdicionar.Icon = null;
             this.btnAdicionar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.btnAdicionar.Location = new System.Drawing.Point(547, 226);
+            this.btnAdicionar.Location = new System.Drawing.Point(279, 226);
             this.btnAdicionar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAdicionar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.btnAdicionar.Name = "btnAdicionar";
@@ -514,12 +514,13 @@
             this.btnAdicionar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnAdicionar.UseAccentColor = false;
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // CadastroCachorro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(635, 515);
+            this.ClientSize = new System.Drawing.Size(635, 485);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "CadastroCachorro";

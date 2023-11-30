@@ -9,7 +9,7 @@ namespace AdestramentoMagali.App.Cadastros
 {
     public partial class CadastroCachorro : CadastroBase
     {
-        private List<EquipamentoModel> _equipamentos;
+        private List<CachorroEquipModel> _cachorroEquip;
         private readonly IBaseService<Cachorro> _cachorroService;
         private readonly IBaseService<Funcionario> _funcionarioService;
         private readonly IBaseService<Cliente> _clienteService;
@@ -23,7 +23,7 @@ namespace AdestramentoMagali.App.Cadastros
             _funcionarioService = funcionarioService;
             _clienteService = clienteService;
             _equipamentoService = equipamentoService;
-            _equipamentos = new List<EquipamentoModel>();
+            _cachorroEquip = new List<CachorroEquipModel>();
             InitializeComponent();
             CarregarCombo();
             CarregaGridEquipamentos();
@@ -73,28 +73,23 @@ namespace AdestramentoMagali.App.Cadastros
                 cachorro.Cliente = cliente;
             }
 
-            foreach (var equipamentos in _equipamentos)
+            foreach (var equipamentos in _cachorroEquip)
             {
-                var equipamento = new Equipamento
+                var cachorroEquip = new CachorroEquip
                 {
-                    Id = equipamentos.Id,
-                    Nome = equipamentos.Nome,
-                    Indicacao = equipamentos.Indicacao,
-                    Descricao = equipamentos.Descricao,
-                    Quantidade = equipamentos.Quantidade
+                    Cachorro = cachorro,
+                    Equipamento = _equipamentoService.GetById<Equipamento>(equipamentos.IdEquipamento)
                 };
 
-                cachorro.Equipamentos.Add(equipamento);
+                cachorro.Equipamentos.Add(cachorroEquip);
             }
         }
 
         protected override void Novo()
         {
-            LimpaCampos();
-            _equipamentos.Clear();
+            base.Novo();
+            _cachorroEquip.Clear();
             CarregaGridEquipamentos();
-            materialTabControl.SelectedIndex = 0;
-            tabPageCadastro.Focus();
         }
 
         protected override void Salvar()
@@ -126,6 +121,23 @@ namespace AdestramentoMagali.App.Cadastros
             }
         }
 
+        protected override void Editar()
+        {
+            if (dataGridViewConsulta.SelectedRows.Count > 0)
+            {
+                IsAlteracao = true;
+                var linha = dataGridViewConsulta.SelectedRows[0];
+                CarregaRegistro(linha);
+                materialTabControl.SelectedIndex = 0;
+                tabPageCadastro.Focus();
+                CarregaGridEquipamentos();
+            }
+            else
+            {
+                MessageBox.Show(@"Selecione algum registro!", @"Adestramento Magali", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+        }
         protected override void Deletar(int id)
         {
             try
@@ -148,6 +160,7 @@ namespace AdestramentoMagali.App.Cadastros
 
         protected override void CarregaRegistro(DataGridViewRow? linha)
         {
+            int.TryParse(linha?.Cells["Id"].Value.ToString(), out var id);
             txtId.Text = linha?.Cells["Id"].Value.ToString();
             txtNome.Text = linha?.Cells["Nome"].Value.ToString();
             txtIdade.Text = linha?.Cells["Idade"].Value.ToString();
@@ -160,33 +173,50 @@ namespace AdestramentoMagali.App.Cadastros
             txtPlano.Text = linha?.Cells["Plano"].Value.ToString();
             cboFuncionario.SelectedValue = linha?.Cells["IdFuncionario"].Value;
             cboCliente.SelectedValue = linha?.Cells["IdCliente"].Value;
+
+            var includes = new List<string>() { "Cliente", "Funcionario", "Equipamentos", "Equipamentos.Equipamento" };
+            var cachorro = _cachorroService.GetById<Cachorro>(id, includes);
+            _cachorroEquip = new List<CachorroEquipModel>();
+            foreach (var equipamentos in cachorro.Equipamentos)
+            {
+                var cachorroEquip = new CachorroEquipModel
+                {
+                    Id = equipamentos.Id,
+                    IdEquipamento = equipamentos.Equipamento.Id,
+                    Equipamento = equipamentos.Equipamento.Nome
+                };
+                _cachorroEquip.Add(cachorroEquip);
+            }
+            CarregaGridEquipamentos();
         }
 
         private void CarregaGridEquipamentos()
         {
             var source = new BindingSource();
-            if (_equipamentos == null)
+            if (_cachorroEquip == null)
             {
-                _equipamentos = new List<EquipamentoModel>();
+                _cachorroEquip = new List<CachorroEquipModel>();
             }
-            source.DataSource = _equipamentos.ToArray();
+            source.DataSource = _cachorroEquip.ToArray();
             dataGridViewEquip.DataSource = source;
             dataGridViewEquip.Columns["Id"].Visible = false;
-            dataGridViewEquip.Columns["Descricao"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewEquip.Columns["IdEquipamento"].HeaderText = "Id.Equipamento";
+            dataGridViewEquip.Columns["Equipamento"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             if (ValidaEquip())
             {
-                var equipamento = new EquipamentoModel();
-
+                var cachorroEquip = new CachorroEquipModel();
                 if (int.TryParse(cboEquipamento.SelectedValue.ToString(), out var idEquipamento))
                 {
-                    equipamento = _equipamentoService.GetById<EquipamentoModel>(idEquipamento);
+                    var equipamento = _equipamentoService.GetById<Equipamento>(idEquipamento);
+                    cachorroEquip.IdEquipamento = equipamento.Id;
+                    cachorroEquip.Equipamento = equipamento.Nome;
                 }
 
-                _equipamentos.Add(equipamento);
+                _cachorroEquip.Add(cachorroEquip);
                 CarregaGridEquipamentos();
             }
         }

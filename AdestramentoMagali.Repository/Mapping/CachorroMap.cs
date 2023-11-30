@@ -56,4 +56,17 @@ namespace AdestramentoMagali.Repository.Mapping
 
         }
     }
+    public class CachorroEquipMap : IEntityTypeConfiguration<CachorroEquip>
+    {
+        public void Configure(EntityTypeBuilder<CachorroEquip> builder)
+        {
+            builder.ToTable("CachorroEquip");
+
+            builder.HasKey(prop => prop.Id);
+
+            builder.Property(prop => prop.Equipamento)
+                .IsRequired();
+
+        }
+    }
 }

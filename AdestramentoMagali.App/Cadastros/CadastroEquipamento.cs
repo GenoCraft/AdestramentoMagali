@@ -75,6 +75,7 @@ namespace AdestramentoMagali.App.Cadastros
             equipamentos = _equipamentoService.Get<EquipamentoModel>().ToList();
             dataGridViewConsulta.DataSource = equipamentos;
             dataGridViewConsulta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewConsulta.Columns["Descricao"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         protected override void CarregaRegistro(DataGridViewRow? linha)

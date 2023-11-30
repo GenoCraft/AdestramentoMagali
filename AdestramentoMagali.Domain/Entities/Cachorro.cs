@@ -1,4 +1,5 @@
 ﻿using AdestramentoMagali.Domain.Base;
+using System.Text.Json.Serialization;
 
 namespace AdestramentoMagali.Domain.Entities
 {
@@ -6,10 +7,10 @@ namespace AdestramentoMagali.Domain.Entities
     {
         public Cachorro()
         {
-            Equipamentos = new List<Equipamento>();
+            Equipamentos = new List<CachorroEquip>();
         }
         
-        public Cachorro(int id, string? nome, string sexo, int? idade, string? raca, string? porte, float? peso, string? temperamento, string? tipoAdestramento, string? plano, Funcionario? funcionario, Cliente? cliente, List<Equipamento> equipamentos) : base(id)
+        public Cachorro(int id, string? nome, string sexo, int? idade, string? raca, string? porte, float? peso, string? temperamento, string? tipoAdestramento, string? plano, Funcionario? funcionario, Cliente? cliente, List<CachorroEquip> equipamentos) : base(id)
         {
             Nome = nome;
             Idade = idade;
@@ -36,6 +37,22 @@ namespace AdestramentoMagali.Domain.Entities
         public string? Plano { get; set; }
         public Funcionario? Funcionario { get; set; }
         public Cliente? Cliente { get; set; }
-        public List<Equipamento> Equipamentos { get; set; }
+        public List<CachorroEquip> Equipamentos { get; set; }
+    }
+    public class CachorroEquip : BaseEntity<int>
+    {
+        public CachorroEquip()
+        {
+
+        }
+
+        public CachorroEquip(int id, Equipamento? equipamento, Cachorro? cachorro) : base(id)
+        {
+            Equipamento = equipamento;
+            Cachorro = cachorro;
+        }
+
+        public Equipamento? Equipamento { get; set; }
+        public Cachorro? Cachorro { get; set; }
     }
 }

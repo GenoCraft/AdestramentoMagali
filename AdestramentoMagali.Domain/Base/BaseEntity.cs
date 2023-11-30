@@ -4,7 +4,7 @@
     {
         protected BaseEntity()
         {
-            
+
         }
 
         protected BaseEntity(IId id)
