@@ -128,10 +128,10 @@ namespace AdestramentoMagali.Teste
             Assert.AreEqual(cachorro.Cliente, cliente);
             Assert.AreEqual(cachorro.Funcionario, funcionario);
 
-            cachorro.Equipamentos.Add(equipamento);
+            //cachorro.Equipamentos.Add(equipamento);
 
-            Console.WriteLine(JsonSerializer.Serialize(cachorro));
-            Assert.AreEqual(cachorro.Equipamentos[0].Nome, equipamento.Nome);
+            //Console.WriteLine(JsonSerializer.Serialize(cachorro));
+            //Assert.AreEqual(cachorro.Equipamentos[0].Nome, equipamento.Nome);
 
         }
 

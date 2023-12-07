@@ -116,6 +116,7 @@
             this.btnOk.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnOk.UseAccentColor = false;
             this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // btnCancelar
             // 
@@ -136,6 +137,7 @@
             this.btnCancelar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnCancelar.UseAccentColor = false;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // Login
             // 

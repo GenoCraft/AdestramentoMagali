@@ -35,9 +35,9 @@ namespace AdestramentoMagali.Domain.Entities
         public string? Temperamento { get; set; }
         public string? TipoAdestramento { get; set; }
         public string? Plano { get; set; }
-        public Funcionario? Funcionario { get; set; }
-        public Cliente? Cliente { get; set; }
-        public List<CachorroEquip> Equipamentos { get; set; }
+        public virtual Funcionario? Funcionario { get; set; }
+        public virtual Cliente? Cliente { get; set; }
+        public virtual List<CachorroEquip> Equipamentos { get; set; }
     }
     public class CachorroEquip : BaseEntity<int>
     {
@@ -52,7 +52,7 @@ namespace AdestramentoMagali.Domain.Entities
             Cachorro = cachorro;
         }
 
-        public Equipamento? Equipamento { get; set; }
-        public Cachorro? Cachorro { get; set; }
+        public virtual Equipamento? Equipamento { get; set; }
+        public virtual Cachorro? Cachorro { get; set; }
     }
 }

@@ -9,6 +9,7 @@ using AdestramentoMagali.Repository.Repository;
 using AdestramentoMagali.Service.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 
 namespace AdestramentoMagali.App.Infra
@@ -23,18 +24,18 @@ namespace AdestramentoMagali.App.Infra
         public static void ConfiguraServices()
         {
             Services = new ServiceCollection();
+            var strCon = File.ReadAllText("Config/DatabaseSettings.txt");
             Services.AddDbContext<MySqlContext>(options =>
             {
-                var strCon = File.ReadAllText("Config/DatabaseSettings.txt");
-                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
-                options.EnableSensitiveDataLogging();
-
+                options.LogTo(Console.WriteLine)
+                    .EnableSensitiveDataLogging();
+                //options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+                //options.EnableSensitiveDataLogging();
 
                 options.UseMySql(strCon, ServerVersion.AutoDetect(strCon), opt =>
                 {
                     opt.CommandTimeout(180);
                     opt.EnableRetryOnFailure(5);
-
                 });
             });
 
@@ -76,6 +77,10 @@ namespace AdestramentoMagali.App.Infra
                     .ForMember(d => d.IdFuncionario, d => d.MapFrom(x => x.Funcionario!.Id))
                     .ForMember(d => d.Cliente, d => d.MapFrom(x => $"{x.Cliente!.Nome}"))
                     .ForMember(d => d.IdCliente, d => d.MapFrom(x => x.Cliente!.Id));
+
+                config.CreateMap<CachorroEquip, CachorroEquipModel>()
+                .ForMember(d => d.IdEquipamento, d => d.MapFrom(x => x.Equipamento!.Id))
+                .ForMember(d => d.Equipamento, d => d.MapFrom(x => x.Equipamento!.Nome));
 
             }).CreateMapper());
 

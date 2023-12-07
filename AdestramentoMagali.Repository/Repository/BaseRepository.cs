@@ -24,14 +24,14 @@ namespace AdestramentoMagali.Repository.Repository
 
         public void Insert(TEntity obj)
         {
-            _mySqlContext.Entry(obj).State = EntityState.Added;
+            //_mySqlContext.Entry(obj).State = EntityState.Added;
             _mySqlContext.Set<TEntity>().Add(obj);
             _mySqlContext.SaveChanges();
         }
 
         public void Update(TEntity obj)
         {
-            _mySqlContext.Entry(obj).State = EntityState.Modified;
+            //_mySqlContext.Entry(obj).State = EntityState.Modified;
             _mySqlContext.SaveChanges();
         }
 

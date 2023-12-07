@@ -52,7 +52,9 @@ namespace AdestramentoMagali.Repository.Mapping
 
             builder.HasOne(prop => prop.Cliente);
 
-            builder.HasMany(prop => prop.Equipamentos);
+            builder.HasMany(prop => prop.Equipamentos)
+                .WithOne(prop => prop.Cachorro)
+                .OnDelete(DeleteBehavior.Cascade);
 
         }
     }
@@ -64,8 +66,9 @@ namespace AdestramentoMagali.Repository.Mapping
 
             builder.HasKey(prop => prop.Id);
 
-            builder.Property(prop => prop.Equipamento)
-                .IsRequired();
+            builder.HasOne(prop => prop.Cachorro)
+                .WithMany(prop => prop.Equipamentos)
+                .OnDelete(DeleteBehavior.Cascade);
 
         }
     }

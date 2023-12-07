@@ -193,15 +193,11 @@ namespace AdestramentoMagali.App.Cadastros
         private void CarregaGridEquipamentos()
         {
             var source = new BindingSource();
-            if (_cachorroEquip == null)
-            {
-                _cachorroEquip = new List<CachorroEquipModel>();
-            }
             source.DataSource = _cachorroEquip.ToArray();
             dataGridViewEquip.DataSource = source;
-            dataGridViewEquip.Columns["Id"].Visible = false;
-            dataGridViewEquip.Columns["IdEquipamento"].HeaderText = "Id.Equipamento";
-            dataGridViewEquip.Columns["Equipamento"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewEquip.Columns["Id"]!.Visible = false;
+            dataGridViewEquip.Columns["IdEquipamento"]!.HeaderText = @"Id.Equipamento";
+            dataGridViewEquip.Columns["Equipamento"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
